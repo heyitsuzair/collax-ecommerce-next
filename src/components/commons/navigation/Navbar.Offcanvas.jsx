@@ -1,5 +1,15 @@
+import Link from "next/link";
 import React from "react";
-import { IconTitled, InputIconned, Logo, Text3Xl, TextMd } from "../index";
+import { Navigation } from "../../../config";
+import {
+  IconTitled,
+  InputIconned,
+  Logo,
+  Text3Xl,
+  TextLg,
+  TextMd,
+  TextXl,
+} from "../index";
 
 const NavbarOffcanvas = ({ isOpen, setIsCanvasOpen }) => {
   const canvasState = isOpen ? "translate-x-0" : "translate-x-full";
@@ -42,6 +52,19 @@ const NavbarOffcanvas = ({ isOpen, setIsCanvasOpen }) => {
               text="We deploy world-class Creative on demand."
               classes={"font-medium pr-4 md:pr-12"}
             />
+          </div>
+          <div className="flex flex-col gap-6 md:hidden">
+            {Navigation.map((nav) => {
+              return (
+                <Link
+                  key={nav.link}
+                  onClick={() => setIsCanvasOpen(!isOpen)}
+                  href={nav.link}
+                >
+                  <TextXl text={nav.text} classes={"font-medium"} />
+                </Link>
+              );
+            })}
           </div>
           <div className="flex flex-col gap-8">
             <TextMd

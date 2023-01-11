@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { Navigation } from "../../../config";
 import { Logo, NavbarOffcanvas } from "../index";
 
 const Navbar = () => {
@@ -16,38 +17,18 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:block">
           <ul className="flex items-center gap-10">
-            <li className="mt-2">
-              <Link href={"/"} className="font-semibold relative">
-                <span className="peer/navlink text-lg hover:text-black text-gray-400 ">
-                  Home
-                </span>
-                <div className="peer-hover/navlink:bg-indigo-500 peer-hover/navlink:w-full peer-hover/navlink:visible invisible duration-300 rounded-full w-0 transition-all absolute left-0 right-0 top-8 h-1"></div>
-              </Link>
-            </li>
-            <li className="mt-2">
-              <Link href={"/shop"} className="font-semibold relative">
-                <span className="peer/navlink text-lg hover:text-black text-gray-400 ">
-                  Shop
-                </span>
-                <div className="peer-hover/navlink:bg-indigo-500 peer-hover/navlink:w-full peer-hover/navlink:visible invisible duration-300 rounded-full w-0 transition-all absolute left-0 right-0 top-8 h-1"></div>
-              </Link>
-            </li>
-            <li className="mt-2">
-              <Link href={"/contact"} className="font-semibold relative">
-                <span className="peer/navlink text-lg hover:text-black text-gray-400 ">
-                  Contact
-                </span>
-                <div className="peer-hover/navlink:bg-indigo-500 peer-hover/navlink:w-full peer-hover/navlink:visible invisible duration-300 rounded-full w-0 transition-all absolute left-0 right-0 top-8 h-1"></div>
-              </Link>
-            </li>
-            <li className="mt-2">
-              <Link href={"/about"} className="font-semibold relative">
-                <span className="peer/navlink text-lg hover:text-black text-gray-400 ">
-                  About
-                </span>
-                <div className="peer-hover/navlink:bg-indigo-500 peer-hover/navlink:w-full peer-hover/navlink:visible invisible duration-300 rounded-full w-0 transition-all absolute left-0 right-0 top-8 h-1"></div>
-              </Link>
-            </li>
+            {Navigation.map((nav) => {
+              return (
+                <li key={nav.link} className="mt-2">
+                  <Link href={nav.link} className="font-semibold relative">
+                    <span className="peer/navlink text-lg hover:text-black text-gray-400 ">
+                      {nav.text}
+                    </span>
+                    <div className="peer-hover/navlink:bg-indigo-500 peer-hover/navlink:w-full peer-hover/navlink:visible invisible duration-300 rounded-full w-0 transition-all absolute left-0 right-0 top-8 h-1"></div>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
