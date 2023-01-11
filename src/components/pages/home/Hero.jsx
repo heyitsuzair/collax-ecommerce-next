@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="bg-indigo-500 rounded-full hidden lg:block lg:w-[690px] lg:h-[690px] z-[1] absolute -right-[29rem] -top-36"></div>
       <div className="z-[2] absolute left-0 right-0">
         <div className="h-screen gap-8 grid grid-cols-12">
-          <div className="left col-span-12 lg:col-span-7 p-10 mt-40 flex flex-col gap-12">
+          <div className="left col-span-12 lg:col-span-7 p-10 lg:pl-24 lg:pt-16 mt-40 flex flex-col gap-12">
             <Text7Xl
               text="We make things look good"
               classes={"text-gray-900 font-bold dm-sans"}
@@ -41,7 +41,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="right col-span-12 lg:col-span-5 lg:mt-40">
-            <Image src={HeroImage} className="w-4/6 mx-auto" />
+            <Image src={HeroImage} className="w-4/6 lg:w-3/4 mx-auto" />
           </div>
         </div>
       </div>
