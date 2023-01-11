@@ -1,8 +1,14 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Logo from "./Logo";
+import NavbarOffcanvas from "./Navbar.Offcanvas";
 
 const Navbar = () => {
+  /**
+   * State For Canvas
+   */
+  const [isCanvasOpen, setIsCanvasOpen] = useState(false);
+
   return (
     <header className="absolute flex justify-between items-center w-[97%] mx-auto right-0 left-0 top-12">
       <div className="left flex items-center md:gap-16 lg:gap-28">
@@ -50,9 +56,14 @@ const Navbar = () => {
         <button
           className="py-4 px-6 rounded-lg hover:bg-yellow-300 transition-all"
           type="button"
+          onClick={() => setIsCanvasOpen(!isCanvasOpen)}
         >
           <i className="fa fa-bars text-3xl" aria-hidden="true"></i>
         </button>
+        <NavbarOffcanvas
+          isOpen={isCanvasOpen}
+          setIsCanvasOpen={setIsCanvasOpen}
+        />
       </div>
     </header>
   );
