@@ -5,7 +5,7 @@ const ProgressBar = ({ progress }) => {
     <LoadingBar
       waitingTime={300}
       shadow={true}
-      color={"#3b82f6"}
+      color={"#4f46e5"}
       progress={progress}
       height={3}
     />

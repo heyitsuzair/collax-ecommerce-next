@@ -1,0 +1,9 @@
+import React from "react";
+
+const Text4Xl = ({ classes, text }) => {
+  return (
+    <h1 className={`text-3xl md:text-4xl text-white ${classes}`}>{text}</h1>
+  );
+};
+
+export default Text4Xl;

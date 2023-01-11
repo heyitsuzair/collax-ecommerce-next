@@ -1,8 +1,7 @@
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import ProgressBar from "../src/components/commons/ProgressBar";
-import Navbar from "../src/components/commons/Navbar";
+import { ProgressBar, Navbar } from "../src/components/commons";
 
 export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0);

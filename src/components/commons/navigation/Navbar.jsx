@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import Logo from "./Logo";
-import NavbarOffcanvas from "./Navbar.Offcanvas";
+import { Logo, NavbarOffcanvas } from "../index";
 
 const Navbar = () => {
   /**
@@ -13,7 +12,7 @@ const Navbar = () => {
     <header className="absolute flex justify-between items-center w-[97%] mx-auto right-0 left-0 top-12">
       <div className="left flex items-center md:gap-16 lg:gap-28">
         <Link href={"/"}>
-          <Logo />
+          <Logo color="blue" />
         </Link>
         <div className="hidden md:block">
           <ul className="flex items-center gap-10">
