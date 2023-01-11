@@ -5,11 +5,11 @@ import Logo from "./Logo";
 const Navbar = () => {
   return (
     <header className="absolute flex justify-between items-center w-[97%] mx-auto right-0 left-0 top-12">
-      <div className="left flex items-center gap-28">
+      <div className="left flex items-center md:gap-16 lg:gap-28">
         <Link href={"/"}>
           <Logo />
         </Link>
-        <div>
+        <div className="hidden md:block">
           <ul className="flex items-center gap-10">
             <li className="mt-2">
               <Link href={"/"} className="font-semibold relative">
