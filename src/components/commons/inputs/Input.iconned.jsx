@@ -2,7 +2,7 @@ import React from "react";
 import IconPlain from "../icons/Icon.plain";
 import TextError from "../text/Text.error";
 
-const InputIconned = ({ classes, inputProps, error, errorText }) => {
+const InputIconned = ({ classes, inputProps, error, errorText, icon }) => {
   return (
     <div>
       <div
@@ -13,7 +13,9 @@ const InputIconned = ({ classes, inputProps, error, errorText }) => {
           className="bg-inherit w-full placeholder:text-white outline-0 rounded-xl pl-4 text-white"
         />
         <button type="submit">
-          <IconPlain classes="fa-solid fa-paper-plane bg-indigo-600 w-16 h-16 rounded-xl flex items-center justify-center" />
+          <IconPlain
+            classes={`${icon} bg-indigo-600 rounded-xl flex items-center justify-center`}
+          />
         </button>
       </div>
       {error && <TextError text={errorText} />}

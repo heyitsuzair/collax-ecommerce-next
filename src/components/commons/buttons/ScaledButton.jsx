@@ -7,25 +7,21 @@ const ScaledButton = ({
   size,
   buttonColor,
   textColor,
+  shadow,
 }) => {
-  let buttonSize;
-  let buttonBorderRadius;
+  let buttonSize = "h-12 w-48";
+  let buttonBorderRadius = "rounded-lg";
+  let buttonShadow;
 
   /**
    * Check What Size We Got As Prop And Than Set Size And Border Radius Accordingly
    */
-  if (size && size === "medium") {
-    buttonSize = "h-12 w-48";
-    buttonBorderRadius = "rounded-lg";
-  } else if (size && size === "large") {
-    buttonSize = "h-16 w-64";
+  if (size && size === "large") {
+    buttonSize = "h-14 w-52 md:h-16 md:w-64";
     buttonBorderRadius = "rounded-xl";
   } else if (size && size === "small") {
     buttonSize = "h-8 w-32";
     buttonBorderRadius = "rounded-md";
-  } else {
-    buttonSize = "h-12 w-48";
-    buttonBorderRadius = "rounded-lg";
   }
 
   /**
@@ -41,14 +37,21 @@ const ScaledButton = ({
     textColor = "text-white";
   }
 
+  /**
+   * Check Whether the shadow is provided or not
+   */
+  if (shadow) {
+    buttonShadow = "shadow-2xl";
+  }
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`b mx-auto ${buttonSize} flex justify-center items-center`}
+      className={`b ${buttonSize} flex justify-center items-center`}
     >
       <div
-        className={`i ${buttonSize} ${buttonColor} items-center  ${buttonBorderRadius} shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out`}
+        className={`i ${buttonSize} ${buttonColor} items-center  ${buttonBorderRadius} ${buttonShadow} cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out`}
       ></div>
       <span
         className={`text-center ${textColor} font-semibold z-10 pointer-events-none`}

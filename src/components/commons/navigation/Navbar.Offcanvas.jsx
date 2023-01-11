@@ -70,7 +70,7 @@ const NavbarOffcanvas = ({ isOpen, setIsCanvasOpen }) => {
             <TextMd
               text="Contact Us"
               classes={
-                "font-semibold poppins uppercase tracking-widest text-gray-500"
+                "font-semibold dm-sans uppercase tracking-widest text-gray-500"
               }
             />
             <div className="icons flex flex-col gap-5">
@@ -95,11 +95,14 @@ const NavbarOffcanvas = ({ isOpen, setIsCanvasOpen }) => {
             <TextMd
               text="Get Update"
               classes={
-                "font-semibold poppins uppercase tracking-widest text-gray-500"
+                "font-semibold dm-sans uppercase tracking-widest text-gray-500"
               }
             />
             <form action="/" method="GET" className="input">
-              <InputIconned inputProps={inputProps} />
+              <InputIconned
+                icon="fa-solid fa-paper-plane w-16 h-16"
+                inputProps={inputProps}
+              />
             </form>
           </div>
         </div>

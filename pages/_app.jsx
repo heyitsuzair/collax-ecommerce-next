@@ -8,6 +8,11 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter();
 
+  /**
+   * Get Current Route Path
+   */
+  const currentRoutePath = router.asPath;
+
   useEffect(() => {
     router.events.on("routeChangeStart", () => {
       setProgress(40);
@@ -22,7 +27,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <ProgressBar progress={progress} />
-      <Navbar />
+      <Navbar minimal={currentRoutePath === "/" ? true : false} />
       <Component {...pageProps} />
     </>
   );
