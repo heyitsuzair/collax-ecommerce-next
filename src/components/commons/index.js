@@ -15,8 +15,10 @@ import TextMd from "./text/Text.md";
 import TextSm from "./text/Text.sm";
 import TextError from "./text/Text.error";
 import IconPlain from "./icons/Icon.plain";
+import IconHoverable from "./icons/Icon.hoverable";
 import IconTitled from "./icons/Icon.titled";
 import InputIconned from "./inputs/Input.iconned";
+import CardIconTitleDescription from "./cards/Card.icon.title.description";
 
 export {
   Logo,
@@ -37,5 +39,7 @@ export {
   TextError,
   IconPlain,
   IconTitled,
+  IconHoverable,
   InputIconned,
+  CardIconTitleDescription,
 };

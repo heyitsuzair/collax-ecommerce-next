@@ -51,10 +51,10 @@ const ScaledButton = ({
       className={`b ${buttonSize} flex justify-center items-center`}
     >
       <div
-        className={`i ${buttonSize} ${buttonColor} items-center  ${buttonBorderRadius} ${buttonShadow} cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out`}
+        className={`i ${buttonSize} ${buttonColor} z-[1] items-center  ${buttonBorderRadius} ${buttonShadow} cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out`}
       ></div>
       <span
-        className={`text-center ${textColor} font-semibold z-10 pointer-events-none`}
+        className={`text-center ${textColor} font-semibold z-[2] pointer-events-none`}
       >
         {text}
 

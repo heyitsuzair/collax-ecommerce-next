@@ -1,3 +1,4 @@
 import Hero from "./Hero";
+import CreativeDesign from "./CreativeDesign";
 
-export { Hero };
+export { Hero, CreativeDesign };
