@@ -19,6 +19,7 @@ import IconHoverable from "./icons/Icon.hoverable";
 import IconTitled from "./icons/Icon.titled";
 import InputIconned from "./inputs/Input.iconned";
 import CardIconTitleDescription from "./cards/Card.icon.title.description";
+import CardImageTitleDescriptionButton from "./cards/Card.image.title.description.button";
 import HeadingCircleLeft from "./headings/Heading.circle.left";
 
 export {
@@ -43,5 +44,6 @@ export {
   IconHoverable,
   InputIconned,
   CardIconTitleDescription,
+  CardImageTitleDescriptionButton,
   HeadingCircleLeft,
 };

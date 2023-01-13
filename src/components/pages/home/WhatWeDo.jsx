@@ -1,12 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { HeadingCircleLeft, ScaledButton, Text6Xl } from "../../commons";
+import { WhatWeDoCards } from "../../../config";
+import {
+  CardImageTitleDescriptionButton,
+  HeadingCircleLeft,
+  ScaledButton,
+  Text6Xl,
+} from "../../commons";
 
 const WhatWeDo = () => {
   return (
-    <section className="px-10 py-24 what-we-do bg-gray-200">
-      <div className="container grid gap-5 grid-cols-12 mx-20">
-        <div className="col-span-6 flex flex-col gap-5">
+    <section className="p-8 lg:p-24 what-we-do bg-gray-100">
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-6 flex flex-col gap-5">
           <HeadingCircleLeft text="What We Do?" />
           <Text6Xl
             text="Experts in every aspect lifecycle"
@@ -18,6 +25,13 @@ const WhatWeDo = () => {
             </Link>
           </div>
         </div>
+        {WhatWeDoCards.map((card, index) => {
+          return (
+            <div key={index} className="col-span-12 lg:col-span-6">
+              <CardImageTitleDescriptionButton {...card} />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
