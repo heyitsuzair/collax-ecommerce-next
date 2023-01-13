@@ -17,7 +17,7 @@ const WhatWeDo = () => {
           <HeadingCircleLeft text="What We Do?" />
           <Text6Xl
             text="Experts in every aspect lifecycle"
-            classes={"text-gray-900 font-bold dm-sans"}
+            classes={"text-gray-900 font-bold"}
           />
           <div className="mt-5">
             <Link href="/about">
