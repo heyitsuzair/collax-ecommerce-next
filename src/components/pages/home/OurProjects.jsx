@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { OurProjectsTabs } from "../../../config";
 import {
   HeadingCircleLeft,
+  ProjectsGrid,
   TabsUnderlined,
   Text2Xl,
   Text6Xl,
@@ -17,7 +18,7 @@ const OurProjects = () => {
    * Variable To Hold Tabs Content
    */
   const tabsContent = [
-    <Text2Xl key={1} text="1" />,
+    <ProjectsGrid key={1} text="1" />,
     <Text2Xl key={2} text="2" />,
     <Text2Xl key={3} text="3" />,
   ];
