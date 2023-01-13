@@ -12,7 +12,7 @@ export const CreativeDesignCards = [
     description: "Completed Projects",
   },
   {
-    icon: "px-4 -ml-8 lg:px-0 lg:ml-0 fa-solid fa-gear",
+    icon: "px-5 -ml-8 lg:px-0 lg:ml-0 fa-solid fa-gear",
     color: "bg-pink-300",
     title: "180+",
     description: "Design Source",
