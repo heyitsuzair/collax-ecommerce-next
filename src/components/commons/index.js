@@ -19,6 +19,7 @@ import IconHoverable from "./icons/Icon.hoverable";
 import IconTitled from "./icons/Icon.titled";
 import InputIconned from "./inputs/Input.iconned";
 import CardIconTitleDescription from "./cards/Card.icon.title.description";
+import HeadingCircleLeft from "./headings/Heading.circle.left";
 
 export {
   Logo,
@@ -42,4 +43,5 @@ export {
   IconHoverable,
   InputIconned,
   CardIconTitleDescription,
+  HeadingCircleLeft,
 };
