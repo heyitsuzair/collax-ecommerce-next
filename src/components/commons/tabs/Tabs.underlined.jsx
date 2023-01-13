@@ -1,7 +1,5 @@
 import React from "react";
 import Text2Xl from "../text/Text.2xl";
-import TextMd from "../text/Text.md";
-import TextXl from "../text/Text.xl";
 
 const TabsUnderlined = () => {
   return (
