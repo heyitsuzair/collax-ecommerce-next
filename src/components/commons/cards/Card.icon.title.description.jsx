@@ -26,7 +26,7 @@ const CardIconTitleDescription = ({ color, icon, title, description }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="flex gap-10 items-center justify-center">
+      <div className="flex gap-1 lg:gap-7 items-center justify-center">
         <i
           className={`${icon} text-neutral-600 transition-all text-6xl`}
           ref={ref}

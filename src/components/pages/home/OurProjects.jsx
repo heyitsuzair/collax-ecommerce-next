@@ -4,7 +4,6 @@ import {
   HeadingCircleLeft,
   ProjectsGrid,
   TabsUnderlined,
-  Text2Xl,
   Text6Xl,
 } from "../../commons";
 

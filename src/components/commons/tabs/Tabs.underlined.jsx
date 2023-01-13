@@ -1,4 +1,5 @@
 import React from "react";
+
 import TextXl from "../text/Text.xl";
 
 const TabsUnderlined = ({ activeTab, tabs, handleTabClick, justify }) => {
