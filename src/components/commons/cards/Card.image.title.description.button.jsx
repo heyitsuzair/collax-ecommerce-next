@@ -25,7 +25,11 @@ const CardImageTitleDescriptionButton = ({
         <Link href={cardLink}>
           <div className="bg-white flex flex-col lg:flex-row gap-7 rounded-xl p-8">
             <div className="image">
-              <Image src={CARD_IMAGE} alt="Loading..." />
+              <Image
+                src={CARD_IMAGE}
+                className="w-14 lg:w-40"
+                alt="Loading..."
+              />
             </div>
             <div className="content flex flex-col gap-6">
               <Text3Xl
