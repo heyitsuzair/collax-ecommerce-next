@@ -28,7 +28,7 @@ const ScaledButton = ({
    * Check Whether the button color is provided or not
    */
   if (!buttonColor) {
-    buttonColor = "bg-indigo-500";
+    buttonColor = "bg-indigo-600";
   }
   /**
    * Check Whether the button color is provided or not
