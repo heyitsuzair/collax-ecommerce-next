@@ -18,3 +18,39 @@ export const CreativeDesignCards = [
     description: "Design Source",
   },
 ];
+
+export const WhatWeDoCards = [
+  {
+    cardLink: "/about",
+    image: "service-1.png",
+    title: "Ideation & Evaluation",
+    description_1:
+      "At Collax we specialize in designing, building, shipping and scaling beautiful, usable products with blazing-fast",
+    description_2:
+      "At Collax we specialize in designing, building, shipping and scaling...",
+    buttonText: "Learn More",
+    buttonIcon: "fa fa-arrow-right",
+  },
+  {
+    cardLink: "/about",
+    image: "service-2.png",
+    title: "Ideation & Evaluation",
+    description_1:
+      "At Collax we specialize in designing, building, shipping and scaling beautiful, usable products with blazing-fast",
+    description_2:
+      "At Collax we specialize in designing, building, shipping and scaling...",
+    buttonText: "Learn More",
+    buttonIcon: "fa fa-arrow-right",
+  },
+  {
+    cardLink: "/about",
+    image: "service-3.png",
+    title: "Online Marketing",
+    description_1:
+      "At Collax we specialize in designing, building, shipping and scaling beautiful, usable products with blazing-fast",
+    description_2:
+      "At Collax we specialize in designing, building, shipping and scaling...",
+    buttonText: "Learn More",
+    buttonIcon: "fa fa-arrow-right",
+  },
+];
