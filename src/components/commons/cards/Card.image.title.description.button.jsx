@@ -23,7 +23,7 @@ const CardImageTitleDescriptionButton = ({
     <>
       {cardLink ? (
         <Link href={cardLink}>
-          <div className="bg-white flex gap-7 rounded-xl p-8">
+          <div className="bg-white flex flex-col lg:flex-row gap-7 rounded-xl p-8">
             <div className="image">
               <Image src={CARD_IMAGE} alt="Loading..." />
             </div>
@@ -46,7 +46,7 @@ const CardImageTitleDescriptionButton = ({
         </Link>
       ) : (
         <>
-          <div className="bg-white flex gap-7 rounded-xl p-8">
+          <div className="bg-white flex flex-col lg:flex-row gap-7 rounded-xl p-8">
             <div className="image">
               <Image src={CARD_IMAGE} alt="Loading..." />
             </div>

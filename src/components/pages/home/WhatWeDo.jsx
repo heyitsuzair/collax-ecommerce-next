@@ -11,9 +11,9 @@ import {
 
 const WhatWeDo = () => {
   return (
-    <section className="p-24 what-we-do bg-gray-100">
+    <section className="p-8 lg:p-24 what-we-do bg-gray-100">
       <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-6 flex flex-col gap-5">
+        <div className="col-span-12 lg:col-span-6 flex flex-col gap-5">
           <HeadingCircleLeft text="What We Do?" />
           <Text6Xl
             text="Experts in every aspect lifecycle"
@@ -27,7 +27,7 @@ const WhatWeDo = () => {
         </div>
         {WhatWeDoCards.map((card, index) => {
           return (
-            <div key={index} className="col-span-6">
+            <div key={index} className="col-span-12 lg:col-span-6">
               <CardImageTitleDescriptionButton {...card} />
             </div>
           );
