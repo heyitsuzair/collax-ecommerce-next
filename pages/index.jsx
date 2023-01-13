@@ -1,5 +1,10 @@
 import Head from "next/head";
-import { CreativeDesign, Hero, WhatWeDo } from "../src/components/pages/home";
+import {
+  CreativeDesign,
+  Hero,
+  OurProjects,
+  WhatWeDo,
+} from "../src/components/pages/home";
 
 export default function Home() {
   return (
@@ -17,6 +22,7 @@ export default function Home() {
         <Hero />
         <CreativeDesign />
         <WhatWeDo />
+        <OurProjects />
       </div>
     </>
   );
