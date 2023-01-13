@@ -21,7 +21,7 @@ import InputIconned from "./inputs/Input.iconned";
 import CardIconTitleDescription from "./cards/Card.icon.title.description";
 import CardImageTitleDescriptionButton from "./cards/Card.image.title.description.button";
 import HeadingCircleLeft from "./headings/Heading.circle.left";
-
+import TabsUnderlined from "./tabs/Tabs.underlined";
 export {
   Logo,
   Navbar,
@@ -46,4 +46,5 @@ export {
   CardIconTitleDescription,
   CardImageTitleDescriptionButton,
   HeadingCircleLeft,
+  TabsUnderlined,
 };
