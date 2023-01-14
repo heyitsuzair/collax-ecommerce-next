@@ -22,7 +22,7 @@ const PreFooter = () => {
   return (
     <div className="w-10/12 mx-auto">
       <div
-        className="bg-no-repeat bg-contain bg-right rounded-2xl my-10 bg-indigo-600"
+        className="bg-no-repeat bg-contain bg-right rounded-2xl my-20 bg-indigo-600"
         style={{ backgroundImage: `url(${bg.src})` }}
       >
         <div className="flex flex-col px-10 lg:px-0 lg:pl-20 py-20 justify-between gap-10 lg:flex-row lg:gap-24">

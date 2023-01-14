@@ -24,8 +24,8 @@ const Navbar = ({ minimal }) => {
     return (
       <header className="absolute z-[3] flex justify-between items-center p-3 w-[97%] mx-auto right-0 left-0 top-10">
         <div className="left flex items-center md:gap-16 lg:gap-28">
-          <Link href={"/"}>
-            <Logo height={14} color="blue" />
+          <Link href={"/"} className="shadow-2xl rounded-full">
+            <Logo height={14} />
           </Link>
           <div className="hidden md:block">
             <ul className="flex items-center gap-10">
@@ -75,10 +75,10 @@ const Navbar = ({ minimal }) => {
     );
   } else {
     return (
-      <header className="sticky top-10 flex justify-between shadow-xl rounded-xl p-3 items-center w-[97%] mx-auto right-0 left-0">
+      <header className="sticky top-10 bg-white flex justify-between shadow-xl rounded-xl p-3 items-center w-[97%] mx-auto right-0 left-0">
         <div className="left flex items-center md:gap-16 lg:gap-28">
-          <Link href={"/"}>
-            <Logo height={14} color="blue" />
+          <Link href={"/"} className="shadow-2xl rounded-full">
+            <Logo height={14} />
           </Link>
           <div className="hidden md:block">
             <ul className="flex items-center gap-10">
