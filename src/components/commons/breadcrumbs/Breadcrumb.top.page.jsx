@@ -10,6 +10,13 @@ const BreadcrumbTopPage = ({ text }) => {
    */
   const BOTTOM_IMAGE = require("../../../img/service-1.png");
 
+  /**
+   * Handle WHen Someone Clicks On Lets Work Together
+   */
+  const onWorkTogetherClick = () => {
+    window.open("//wa.link/bgpq3g", "_blank");
+  };
+
   return (
     <header id="breadcrumb">
       <div
@@ -18,15 +25,14 @@ const BreadcrumbTopPage = ({ text }) => {
       >
         <div className="container mx-7 lg:mx-32 flex flex-col gap-7 lg:gap-10">
           <Text6Xl text={text} classes="text-black font-bold" />
-          <a href="//wa.link/bgpq3g" target="_blank" rel="noreferrer">
-            <ScaledButton
-              text="Let's Work Together"
-              icon="fa fa-arrow-right"
-              buttonColor="bg-white border-b-4 border-indigo-500"
-              textColor="text-black"
-              size="large"
-            />
-          </a>
+          <ScaledButton
+            text="Let's Work Together"
+            onClick={onWorkTogetherClick}
+            icon="fa fa-arrow-right"
+            buttonColor="bg-white border-b-4 border-indigo-500"
+            textColor="text-black"
+            size="large"
+          />
         </div>
         <Image
           src={BOTTOM_IMAGE}
