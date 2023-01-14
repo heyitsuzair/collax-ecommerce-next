@@ -19,10 +19,15 @@ const PreFooter = () => {
    */
   const FOOTER_IMAGE = require("../../../img/news-1.png");
 
+  /**
+   * Bottom Image For Footer
+   */
+  const BOTTOM_IMAGE = require("../../../img/service-1.png");
+
   return (
     <div className="w-10/12 mx-auto">
       <div
-        className="bg-no-repeat bg-contain bg-right rounded-2xl my-20 bg-indigo-600"
+        className="relative bg-no-repeat bg-contain bg-right rounded-2xl my-20 bg-indigo-600"
         style={{ backgroundImage: `url(${bg.src})` }}
       >
         <div className="flex flex-col px-10 lg:px-0 lg:pl-20 py-10 lg:py-20 justify-between gap-10 lg:flex-row lg:gap-24">
@@ -44,6 +49,11 @@ const PreFooter = () => {
             <Image src={FOOTER_IMAGE} alt="Loading..." />
           </div>
         </div>
+        <Image
+          src={BOTTOM_IMAGE}
+          alt="Loading..."
+          className="absolute w-20 lg:w-24 -left-7 -bottom-5"
+        />
       </div>
     </div>
   );

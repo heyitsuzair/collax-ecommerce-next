@@ -26,6 +26,7 @@ import TabsUnderlined from "./tabs/Tabs.underlined";
 import ProjectsGrid from "./grids/ProjectsGrid";
 import PreFooter from "./footer/PreFooter";
 import MainFooter from "./footer/MainFooter";
+import BreadcrumbTopPage from "./breadcrumbs/Breadcrumb.top.page";
 
 export {
   Logo,
@@ -56,4 +57,5 @@ export {
   ProjectsGrid,
   PreFooter,
   MainFooter,
+  BreadcrumbTopPage,
 };
