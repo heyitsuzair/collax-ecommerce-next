@@ -25,6 +25,7 @@ import HeadingCircleLeft from "./headings/Heading.circle.left";
 import TabsUnderlined from "./tabs/Tabs.underlined";
 import ProjectsGrid from "./grids/ProjectsGrid";
 import PreFooter from "./footer/PreFooter";
+import MainFooter from "./footer/MainFooter";
 
 export {
   Logo,
@@ -54,4 +55,5 @@ export {
   TabsUnderlined,
   ProjectsGrid,
   PreFooter,
+  MainFooter,
 };

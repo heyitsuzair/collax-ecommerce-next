@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
-const Logo = ({ height, color }) => {
+const Logo = ({ height }) => {
   let imageHeight = `w-full h-${height ? height : "16"}`;
 
   /**
    * Path
    */
-  const logo = require(`../../../img/logo-${color}.png`);
+  const logo = require(`../../../img/logo.png`);
 
   return (
     <Image
