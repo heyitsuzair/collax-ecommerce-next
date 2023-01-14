@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { ProgressBar, Navbar } from "../src/components/commons";
+import { ProgressBar, Navbar, PreFooter } from "../src/components/commons";
 
 export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0);
@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }) {
       <ProgressBar progress={progress} />
       <Navbar minimal={currentRoutePath === "/" ? true : false} />
       <Component {...pageProps} />
+      <PreFooter />
     </>
   );
 }
