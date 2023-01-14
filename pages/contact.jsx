@@ -9,7 +9,7 @@ const Contact = () => {
         <title>Contact</title>
         <meta
           name="description"
-          content="Ecommerce Contacy. Made With Heart By UZAIR"
+          content="Ecommerce Contact. Made With Heart By UZAIR"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
