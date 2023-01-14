@@ -22,15 +22,15 @@ const PreFooter = () => {
   return (
     <div className="w-10/12 mx-auto">
       <div
-        className="bg-no-repeat bg-contain bg-right rounded-2xl my-10 bg-indigo-600"
+        className="bg-no-repeat bg-contain bg-right rounded-2xl my-20 bg-indigo-600"
         style={{ backgroundImage: `url(${bg.src})` }}
       >
-        <div className="flex flex-col px-10 lg:px-0 lg:pl-20 py-20 justify-between gap-10 lg:flex-row lg:gap-24">
+        <div className="flex flex-col px-10 lg:px-0 lg:pl-20 py-10 lg:py-20 justify-between gap-10 lg:flex-row lg:gap-24">
           <div className="left flex flex-col gap-10">
             <HeadingCircleLeft text="Get Update" textClasses="text-gray-300" />
             <Text5Xl
               text="Get latest updates and deals"
-              classes="font-bold pr-24"
+              classes="font-bold lg:pr-24"
             />
             <form action="/" method="GET" className="input">
               <InputIconned
