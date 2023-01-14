@@ -18,11 +18,13 @@ import IconPlain from "./icons/Icon.plain";
 import IconHoverable from "./icons/Icon.hoverable";
 import IconTitled from "./icons/Icon.titled";
 import InputIconned from "./inputs/Input.iconned";
+import InputButtoned from "./inputs/Input.buttoned";
 import CardIconTitleDescription from "./cards/Card.icon.title.description";
 import CardImageTitleDescriptionButton from "./cards/Card.image.title.description.button";
 import HeadingCircleLeft from "./headings/Heading.circle.left";
 import TabsUnderlined from "./tabs/Tabs.underlined";
 import ProjectsGrid from "./grids/ProjectsGrid";
+import PreFooter from "./footer/PreFooter";
 
 export {
   Logo,
@@ -45,9 +47,11 @@ export {
   IconTitled,
   IconHoverable,
   InputIconned,
+  InputButtoned,
   CardIconTitleDescription,
   CardImageTitleDescriptionButton,
   HeadingCircleLeft,
   TabsUnderlined,
   ProjectsGrid,
+  PreFooter,
 };
