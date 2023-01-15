@@ -35,6 +35,7 @@ const CreativeDesign = () => {
         href="//github.com/heyitsuzair"
         target="_blank"
         className="flex gap-4 items-center"
+        rel="noreferrer"
       >
         <IconHoverable icon="fa fa-external-link" />
         <TextLg text="Take A Look At My Github" classes="font-semibold" />
