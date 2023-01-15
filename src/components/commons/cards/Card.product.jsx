@@ -43,7 +43,7 @@ const CardProduct = () => {
         >
           <IconHoverable
             icon={`fa fa-shopping-basket text-sm`}
-            classes="!w-12 !h-12 bg-yellow-400 border-yellow-400 hover:bg-indigo-500 hover:border-indigo-500"
+            classes="!w-12 !h-12 !bg-yellow-400 !border-yellow-400 hover:!bg-indigo-500 hover:!border-indigo-500"
           />
         </button>
         <button
@@ -54,7 +54,7 @@ const CardProduct = () => {
         >
           <IconHoverable
             icon={`fa fa-shopping-cart text-sm`}
-            classes="!w-12 !h-12 bg-yellow-400 border-yellow-400 hover:bg-indigo-500 hover:border-indigo-500"
+            classes="!w-12 !h-12 !bg-yellow-400 !border-yellow-400 hover:!bg-indigo-500 hover:!border-indigo-500"
           />
         </button>
       </div>
