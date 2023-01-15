@@ -32,8 +32,8 @@ const CardIconTitleDescription = ({ color, icon, title, description }) => {
           ref={ref}
         ></i>
         <div>
-          <Text4Xl classes="font-semibold text-black" text={title} />
-          <TextMd text={description} classes="text-black font-medium mt-1" />
+          <Text4Xl classes="font-semibold !text-black" text={title} />
+          <TextMd text={description} classes="!text-black font-medium mt-1" />
         </div>
       </div>
     </div>

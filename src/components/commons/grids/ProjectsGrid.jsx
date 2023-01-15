@@ -61,7 +61,7 @@ const ProjectsGrid = ({ grid }) => {
         </div>
         <div className="flex flex-col justify-between gap-6 h-full">
           <div>
-            <Text4Xl text={TITLE_1} classes="text-black font-medium" />
+            <Text4Xl text={TITLE_1} classes="!text-black font-medium" />
             <TextMd
               text={DESCRIPTION_1}
               classes="text-gray-400 font-medium mt-4"
@@ -86,10 +86,10 @@ const ProjectsGrid = ({ grid }) => {
             </div>
             <div className="flex flex-col justify-between gap-6 col-span-12 lg:col-span-6">
               <div>
-                <TextXl text={TITLE_2} classes="text-black font-medium" />
+                <TextXl text={TITLE_2} classes="!text-black font-medium" />
                 <TextMd
                   text={DESCRIPTION_2}
-                  classes="text-gray-400 font-medium mt-4"
+                  classes="!text-gray-400 font-medium mt-4"
                 />
               </div>
               <a target="_blank" href={LINK_2} rel="noreferrer">
@@ -112,10 +112,10 @@ const ProjectsGrid = ({ grid }) => {
             </div>
             <div className="flex flex-col justify-between gap-6 col-span-12 lg:col-span-6">
               <div>
-                <TextXl text={TITLE_3} classes="text-black font-medium" />
+                <TextXl text={TITLE_3} classes="!text-black font-medium" />
                 <TextMd
                   text={DESCRIPTION_3}
-                  classes="text-gray-400 font-medium mt-4"
+                  classes="!text-gray-400 font-medium mt-4"
                 />
               </div>
               <a target="_blank" href={LINK_3} rel="noreferrer">
