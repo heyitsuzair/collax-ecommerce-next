@@ -1,8 +1,8 @@
 import React from "react";
-import TextSm from "./Text.sm";
+import { TextLg } from "../index";
 
 const TextError = ({ text }) => {
-  return <TextSm classes="text-red-500" text={text} />;
+  return <TextLg classes="text-red-400 font-medium" text={text} />;
 };
 
 export default TextError;
