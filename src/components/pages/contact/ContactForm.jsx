@@ -1,21 +1,72 @@
-import React from "react";
-import { InputPlain, PlainButton, Text6Xl, TextAreaPlain } from "../../commons";
+import { useFormik } from "formik";
+import React, { useState } from "react";
+import { ContactFormSchema } from "../../../yupSchemas";
+import {
+  InputPlain,
+  PlainButton,
+  SpinnerLarge,
+  SpinnerMedium,
+  SpinnerSmall,
+  Text6Xl,
+  TextAreaPlain,
+} from "../../commons";
 
 const ContactForm = () => {
+  /**
+   * State For Loading On Form Submission
+   */
+  const [isLoading, setIsLoading] = useState(false);
+
+  /**
+   * @var initialValues Form Initial Values
+   */
+
+  const initialValues = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  /**
+   * @function onSubmit When Someone Submits Contact Form, this function gets triggered
+   */
+
+  const onSubmit = async (values, actions) => {
+    /**
+     * Start Loading
+     */
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      actions.resetForm();
+    }, 1500);
+  };
+
+  /**
+   * Formik Configuration
+   */
+  const { handleSubmit, values, errors, touched, handleBlur, handleChange } =
+    useFormik({
+      validationSchema: ContactFormSchema,
+      initialValues,
+      onSubmit,
+    });
+
   return (
     <div className="flex flex-col gap-8 w-full lg:w-[58%]">
-      <Text6Xl text="Let's Talk..." classes="font-bold text-black" />
-      <form action="#">
+      <Text6Xl text="Let's Talk..." classes="font-bold !text-black" />
+      <form>
         <div className="mb-3">
           <InputPlain
             type="text"
             name="name"
             placeholder="Enter Your Name"
-            onChange={() => alert("el")}
-            value=""
-            onBlur={() => alert("blur")}
-            error={true}
-            errorText="Enter Your Name"
+            onChange={handleChange}
+            value={values.name}
+            onBlur={handleBlur}
+            error={errors.name && touched.name}
+            errorText={errors.name}
           />
         </div>
         <div className="my-7">
@@ -23,31 +74,35 @@ const ContactForm = () => {
             type="email"
             name="email"
             placeholder="Enter Your Email Address"
-            onChange={() => alert("el")}
-            value=""
-            onBlur={() => alert("blur")}
-            error={true}
-            errorText="Enter Your Email Address"
+            onChange={handleChange}
+            value={values.email}
+            onBlur={handleBlur}
+            error={errors.email && touched.email}
+            errorText={errors.email}
           />
         </div>
         <div className="my-7">
           <TextAreaPlain
             name="message"
             placeholder="Enter Your Message"
-            // onChange={() => alert("el")}
-            value=""
-            onBlur={() => alert("blur")}
-            error={true}
-            errorText="Enter Your Message"
+            onChange={handleChange}
+            value={values.message}
+            onBlur={handleBlur}
+            error={errors.message && touched.message}
+            errorText={errors.message}
           />
         </div>
         <div className="my-7">
-          <PlainButton
-            onClick={() => alert("submit form")}
-            size="large"
-            text="Send Message"
-            buttonColor="bg-yellow-400 hover:bg-indigo-500"
-          />
+          {isLoading ? (
+            <SpinnerMedium />
+          ) : (
+            <PlainButton
+              onClick={handleSubmit}
+              size="large"
+              text="Send Message"
+              buttonColor="bg-yellow-400 hover:bg-indigo-500"
+            />
+          )}
         </div>
       </form>
     </div>
