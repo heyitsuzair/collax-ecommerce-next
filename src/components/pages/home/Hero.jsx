@@ -31,7 +31,7 @@ const Hero = () => {
             </Link>
             <Link href="/about">
               <ScaledButton
-                text="About Fellow Coders"
+                text="About Me"
                 icon="fa fa-arrow-right"
                 buttonColor="bg-indigo-100"
                 textColor="text-indigo-500"
