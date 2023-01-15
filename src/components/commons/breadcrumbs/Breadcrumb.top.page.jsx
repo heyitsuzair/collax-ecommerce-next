@@ -24,7 +24,7 @@ const BreadcrumbTopPage = ({ text }) => {
         style={{ backgroundImage: `url(${bg.src})` }}
       >
         <div className="container mx-7 lg:mx-32 flex flex-col gap-7 lg:gap-10">
-          <Text6Xl text={text} classes="text-black font-bold" />
+          <Text6Xl text={text} classes="!text-black font-bold" />
           <ScaledButton
             text="Let's Work Together"
             onClick={onWorkTogetherClick}

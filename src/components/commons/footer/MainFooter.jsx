@@ -46,14 +46,14 @@ const MainFooter = () => {
       </div>
       <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
         <div className="logo flex items-center gap-4">
-          <Logo height="full w-20" />
+          <Logo height="full !w-20" />
           <TextXl text="Muhammad Uzair" classes="text-white font-bold" />
         </div>
         <div className="icons flex items-center gap-4">
           <a href="//fb.com/uzair.354123" target="_blank" rel="noreferrer">
             <IconHoverable
               icon="fa fa-brands fa-facebook text-xl"
-              classes="w-16 h-16 border-neutral-700 hover:bg-indigo-500 hover:border-indigo-500"
+              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
             />
           </a>
           <a
@@ -63,7 +63,7 @@ const MainFooter = () => {
           >
             <IconHoverable
               icon="fa fa-brands fa-linkedin text-xl"
-              classes="w-16 h-16 border-neutral-700 hover:bg-indigo-500 hover:border-indigo-500"
+              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
             />
           </a>
           <a
@@ -73,13 +73,13 @@ const MainFooter = () => {
           >
             <IconHoverable
               icon="fa fa-brands fa-instagram text-xl"
-              classes="w-16 h-16 border-neutral-700 hover:bg-indigo-500 hover:border-indigo-500"
+              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
             />
           </a>
           <a href="//github.com/heyitsuzair" target="_blank" rel="noreferrer">
             <IconHoverable
               icon="fa fa-brands fa-github text-xl"
-              classes="w-16 h-16 border-neutral-700 hover:bg-indigo-500 hover:border-indigo-500"
+              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
             />
           </a>
         </div>

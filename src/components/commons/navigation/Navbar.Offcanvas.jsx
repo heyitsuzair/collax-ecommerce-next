@@ -35,7 +35,7 @@ const NavbarOffcanvas = ({ isOpen, setIsCanvasOpen }) => {
         <div className="p-8 md:p-24 text-white flex flex-col gap-16">
           <div className="flex items-center justify-between">
             <div className="logo flex items-center gap-4">
-              <Logo height="full w-20" />
+              <Logo height="full !w-20" />
               <TextXl text="Muhammad Uzair" classes="text-white font-bold" />
             </div>
             <div className="close-canvas">
