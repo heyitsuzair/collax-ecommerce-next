@@ -54,6 +54,7 @@ import InputPlain from "./inputs/Input.plain";
  */
 import CardIconTitleDescription from "./cards/Card.icon.title.description";
 import CardImageTitleDescriptionButton from "./cards/Card.image.title.description.button";
+import CardProduct from "./cards/Card.product";
 
 /**
  * Headings
@@ -123,6 +124,7 @@ export {
   InputPlain,
   CardIconTitleDescription,
   CardImageTitleDescriptionButton,
+  CardProduct,
   HeadingCircleLeft,
   TabsUnderlined,
   ProjectsGrid,

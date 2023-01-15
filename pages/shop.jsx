@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { BreadcrumbTopPage } from "../src/components/commons";
+import { MainContent } from "../src/components/pages/shop";
 
 const Shop = () => {
   return (
@@ -15,7 +16,9 @@ const Shop = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BreadcrumbTopPage text="Shop" />
-      <div className="content"></div>
+      <div className="content">
+        <MainContent />
+      </div>
     </>
   );
 };
