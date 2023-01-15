@@ -25,14 +25,13 @@ const TextAreaPlain = ({
       <textarea
         rows={10}
         name={name}
+        value={value}
         onBlur={onBlur}
         id={id}
         onChange={onChange}
         placeholder={placeholder}
         className="border outline-0 rounded-lg p-4 w-full"
-      >
-        {value}
-      </textarea>
+      />
       {error && (
         <div className="mt-1">
           <TextError text={errorText} />
