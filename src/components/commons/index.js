@@ -93,6 +93,11 @@ import SpinnerLarge from "./spinners/SpinnerLarge";
 import SpinnerSmall from "./spinners/SpinnerSmall";
 import SpinnerMedium from "./spinners/SpinnerMedium";
 
+/**
+ * Toast
+ */
+import ReactToastifyContainer from "./toast/ReactToastifyContainer";
+
 export {
   Logo,
   Navbar,
@@ -129,4 +134,5 @@ export {
   SpinnerLarge,
   SpinnerSmall,
   SpinnerMedium,
+  ReactToastifyContainer,
 };

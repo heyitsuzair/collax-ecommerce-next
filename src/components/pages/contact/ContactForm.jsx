@@ -4,12 +4,11 @@ import { ContactFormSchema } from "../../../yupSchemas";
 import {
   InputPlain,
   PlainButton,
-  SpinnerLarge,
   SpinnerMedium,
-  SpinnerSmall,
   Text6Xl,
   TextAreaPlain,
 } from "../../commons";
+import { toast } from "react-toastify";
 
 const ContactForm = () => {
   /**
@@ -38,6 +37,7 @@ const ContactForm = () => {
     setIsLoading(true);
 
     setTimeout(() => {
+      toast.success("We Will Contact You Soon!");
       setIsLoading(false);
       actions.resetForm();
     }, 1500);
