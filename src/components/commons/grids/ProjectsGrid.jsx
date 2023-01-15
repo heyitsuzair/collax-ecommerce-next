@@ -50,7 +50,7 @@ const ProjectsGrid = ({ grid }) => {
   const LINK_3 = grid[2].link;
 
   return (
-    <div class="grid grid-cols-12 gap-6 justify-center">
+    <div className="grid grid-cols-12 gap-6 justify-center">
       <div className="bg-gray-100 flex flex-col gap-6 lg:gap-8 p-3 lg:p-7 col-span-12 lg:col-span-6 rounded-2xl">
         <div className="p-3 lg:p-5 bg-gray-300 rounded-2xl">
           <Image
