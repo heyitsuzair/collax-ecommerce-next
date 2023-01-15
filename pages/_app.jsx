@@ -6,6 +6,7 @@ import {
   Navbar,
   PreFooter,
   MainFooter,
+  ReactToastifyContainer,
 } from "../src/components/commons";
 
 export default function App({ Component, pageProps }) {
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <ProgressBar progress={progress} />
+      <ReactToastifyContainer />
       <Navbar minimal={currentRoutePath === "/" ? true : false} />
       <Component {...pageProps} />
       <PreFooter />

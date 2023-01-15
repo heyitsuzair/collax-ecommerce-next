@@ -25,7 +25,7 @@ const TextAreaPlain = ({
       <textarea
         rows={10}
         name={name}
-        defaultValue={value}
+        value={value}
         onBlur={onBlur}
         id={id}
         onChange={onChange}
