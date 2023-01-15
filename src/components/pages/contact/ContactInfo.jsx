@@ -11,7 +11,7 @@ const ContactInfo = () => {
     <div className="flex flex-col gap-9">
       <Image src={CONTACT_IMAGE} alt="Loading..." />
       <div>
-        <Text2Xl text="Email Address" classes="text-black font-bold" />
+        <Text2Xl text="Email Address" classes="!text-black font-bold" />
         <a href="mailto:uzairdeveloper354123@gmail.com">
           <TextMd
             text="(uzairdeveloper354123@gmail.com)"
@@ -20,7 +20,7 @@ const ContactInfo = () => {
         </a>
       </div>
       <div>
-        <Text2Xl text="Phone No." classes="text-black font-bold" />
+        <Text2Xl text="Phone No." classes="!text-black font-bold" />
         <a href="tel:+923104864150">
           <TextMd
             text="(0310 4864150)"
@@ -29,7 +29,7 @@ const ContactInfo = () => {
         </a>
       </div>
       <div>
-        <Text2Xl text="Address Line" classes="text-black font-bold" />
+        <Text2Xl text="Address Line" classes="!text-black font-bold" />
         <a
           href="https://goo.gl/maps/kwKKyFuGaBpUtNFR8"
           target="_blank"

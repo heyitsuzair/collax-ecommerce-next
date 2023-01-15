@@ -9,6 +9,9 @@ body {
 .dm-sans {
   font-family: "DM Sans", sans-serif;
 }
+.dm-sans-i {
+  font-family: "DM Sans", sans-serif !important;
+}
 .i::before {
   content: "";
   position: absolute;

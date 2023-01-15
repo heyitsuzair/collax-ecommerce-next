@@ -86,6 +86,18 @@ import BreadcrumbTopPage from "./breadcrumbs/Breadcrumb.top.page";
  */
 import TextAreaPlain from "./textareas/TextArea.plain";
 
+/**
+ * Spinners
+ */
+import SpinnerLarge from "./spinners/SpinnerLarge";
+import SpinnerSmall from "./spinners/SpinnerSmall";
+import SpinnerMedium from "./spinners/SpinnerMedium";
+
+/**
+ * Toast
+ */
+import ReactToastifyContainer from "./toast/ReactToastifyContainer";
+
 export {
   Logo,
   Navbar,
@@ -119,4 +131,8 @@ export {
   BreadcrumbTopPage,
   TextAreaPlain,
   PlainButton,
+  SpinnerLarge,
+  SpinnerSmall,
+  SpinnerMedium,
+  ReactToastifyContainer,
 };
