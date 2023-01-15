@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Navigation } from "../../../config";
+import { Navigation, socialLinks } from "../../../config";
 import ScaledButton from "../buttons/ScaledButton";
 import { IconHoverable, Logo, Text3Xl, TextLg, TextXl } from "../index";
 
@@ -50,38 +50,21 @@ const MainFooter = () => {
           <TextXl text="Muhammad Uzair" classes="text-white font-bold" />
         </div>
         <div className="icons flex items-center gap-4">
-          <a href="//fb.com/uzair.354123" target="_blank" rel="noreferrer">
-            <IconHoverable
-              icon="fa fa-brands fa-facebook text-xl"
-              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
-            />
-          </a>
-          <a
-            href="//linkedin.com/in/uzair-dev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconHoverable
-              icon="fa fa-brands fa-linkedin text-xl"
-              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
-            />
-          </a>
-          <a
-            href="//instagram.com/codewith_uzair"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconHoverable
-              icon="fa fa-brands fa-instagram text-xl"
-              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
-            />
-          </a>
-          <a href="//github.com/heyitsuzair" target="_blank" rel="noreferrer">
-            <IconHoverable
-              icon="fa fa-brands fa-github text-xl"
-              classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
-            />
-          </a>
+          {socialLinks.map((link) => {
+            return (
+              <a
+                key={link.link}
+                href={link.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <IconHoverable
+                  icon={`fa fa-brands ${link.icon} text-xl`}
+                  classes="!w-16 !h-16 !border-neutral-700 hover:!bg-indigo-500 hover:!border-indigo-500"
+                />
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>

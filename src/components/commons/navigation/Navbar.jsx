@@ -75,7 +75,7 @@ const Navbar = ({ minimal }) => {
     );
   } else {
     return (
-      <header className="sticky top-10 bg-white z-[3] flex justify-between shadow-xl rounded-xl p-3 items-center w-[97%] mx-auto right-0 left-0">
+      <header className="sticky top-10 bg-white z-[3] flex justify-between shadow-xl rounded-xl p-3 items-center w-[90%] mx-auto right-0 left-0">
         <div className="left flex items-center md:gap-16 lg:gap-28">
           <Link href={"/"} className="shadow-2xl rounded-full">
             <Logo height={14} />
