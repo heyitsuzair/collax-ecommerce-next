@@ -17,7 +17,7 @@ const CardImageTitleDescriptionButton = ({
   /**
    * Image Will Name Come As Prop And Should Be In 'img' folder
    */
-  const CARD_IMAGE = require("../../../img/" + image);
+  const CARD_IMAGE = "/img/" + image;
 
   return (
     <>
@@ -26,6 +26,9 @@ const CardImageTitleDescriptionButton = ({
           <div className="bg-white flex flex-col lg:flex-row gap-7 rounded-xl p-8">
             <div className="image">
               <Image
+                width={100}
+                height={100}
+                unoptimized
                 src={CARD_IMAGE}
                 className="w-14 lg:w-40"
                 alt="Loading..."
@@ -52,7 +55,7 @@ const CardImageTitleDescriptionButton = ({
         <>
           <div className="bg-white flex flex-col lg:flex-row gap-7 rounded-xl p-8">
             <div className="image">
-              <Image src={CARD_IMAGE} alt="Loading..." />
+              <Image unoptimized src={CARD_IMAGE} alt="Loading..." />
             </div>
             <div className="content flex flex-col gap-6">
               <Text3Xl

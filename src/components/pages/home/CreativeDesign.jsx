@@ -7,20 +7,32 @@ const CreativeDesign = () => {
   /**
    * Hand Image
    */
-  const HAND_IMAGE = require("../../../img/creative-hand.png");
-
+  const HAND_IMAGE = "/img/creative-hand.png";
   /**
    * Shape Image
    */
-  const SHAPE_IMAGE = require("../../../img/shape-2.png");
-
+  const SHAPE_IMAGE = "/img/shape-2.png";
   return (
     <div className="bg-neutral-800 relative flex flex-col items-center gap-14 lg:gap-20 p-10 lg:p-28">
       <div className="absolute left-0 top-[40%]">
-        <Image src={HAND_IMAGE} className="hidden lg:block" alt="Loading..." />
+        <Image
+          src={HAND_IMAGE}
+          unoptimized
+          width={100}
+          height={100}
+          className="hidden w-full lg:block"
+          alt="Loading..."
+        />
       </div>
       <div className="absolute left-0 -top-20">
-        <Image src={SHAPE_IMAGE} className="hidden lg:block" alt="Loading..." />
+        <Image
+          src={SHAPE_IMAGE}
+          unoptimized
+          width={100}
+          height={100}
+          className="hidden lg:block"
+          alt="Loading..."
+        />
       </div>
       <h1
         className="text-2xl md:text-5xl text-white text-center font-semibold"

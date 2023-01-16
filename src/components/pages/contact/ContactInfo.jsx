@@ -5,11 +5,18 @@ const ContactInfo = () => {
   /**
    * Contact Image
    */
-  const CONTACT_IMAGE = require("../../../img/contact-1.jpg");
+  const CONTACT_IMAGE = "/img/contact-1.jpg";
 
   return (
     <div className="flex flex-col gap-9">
-      <Image src={CONTACT_IMAGE} alt="Loading..." />
+      <Image
+        unoptimized
+        src={CONTACT_IMAGE}
+        width={100}
+        height={100}
+        className="w-full"
+        alt="Loading..."
+      />
       <div>
         <Text2Xl text="Email Address" classes="!text-black font-bold" />
         <a href="mailto:uzairdeveloper354123@gmail.com">

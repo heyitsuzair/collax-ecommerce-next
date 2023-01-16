@@ -1,14 +1,17 @@
 import Image from "next/image";
 import React from "react";
-
-import bg from "../../../img/ab-1.1.jpg";
 import { ScaledButton, Text6Xl } from "../index";
 
 const BreadcrumbTopPage = ({ text }) => {
   /**
    * Bottom Image For Footer
    */
-  const BOTTOM_IMAGE = require("../../../img/service-1.png");
+  const BOTTOM_IMAGE = "/img/service-1.png";
+
+  /**
+   * Background Image
+   */
+  const bg = "/img/ab-1.1.jpg";
 
   /**
    * Handle WHen Someone Clicks On Lets Work Together
@@ -21,7 +24,7 @@ const BreadcrumbTopPage = ({ text }) => {
     <header id="breadcrumb">
       <div
         className="relative flex items-center bg-no-repeat bg-cover bg-[77%] lg:bg-[90%] -mt-20 h-[50vh] lg:h-screen"
-        style={{ backgroundImage: `url(${bg.src})` }}
+        style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="container mx-7 lg:mx-32 flex flex-col gap-7 lg:gap-10">
           <Text6Xl text={text} classes="!text-black font-bold" />
@@ -36,6 +39,9 @@ const BreadcrumbTopPage = ({ text }) => {
         </div>
         <Image
           src={BOTTOM_IMAGE}
+          width={100}
+          height={100}
+          unoptimized
           alt="Loading..."
           className="absolute w-20 lg:w-28 left-10 -bottom-5"
         />

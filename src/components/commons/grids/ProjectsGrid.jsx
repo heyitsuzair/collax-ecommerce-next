@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import ScaledButton from "../buttons/ScaledButton";
 import Text4Xl from "../text/Text.4xl";
@@ -10,9 +9,9 @@ const ProjectsGrid = ({ grid }) => {
   /**
    * Images
    */
-  const IMAGE_1 = require("../../../img/" + grid[0].image);
-  const IMAGE_2 = require("../../../img/" + grid[1].image);
-  const IMAGE_3 = require("../../../img/" + grid[2].image);
+  const IMAGE_1 = "/img/" + grid[0].image;
+  const IMAGE_2 = "/img/" + grid[1].image;
+  const IMAGE_3 = "/img/" + grid[2].image;
 
   /**
    * Titles
@@ -54,6 +53,9 @@ const ProjectsGrid = ({ grid }) => {
       <div className="bg-gray-100 flex flex-col gap-6 lg:gap-8 p-3 lg:p-7 col-span-12 lg:col-span-6 rounded-2xl">
         <div className="p-3 lg:p-5 bg-gray-300 rounded-2xl">
           <Image
+            unoptimized
+            width={100}
+            height={100}
             src={IMAGE_1}
             alt="Loading..."
             className="rounded-xl w-full h-full object-cover"
@@ -79,6 +81,9 @@ const ProjectsGrid = ({ grid }) => {
           <div className="justify-center bg-gray-100 h-full grid grid-cols-12 gap-6 p-3 lg:px-7 lg:py-10 col-span-12 lg:col-span-6 rounded-2xl">
             <div className="p-3 lg:p-5 bg-gray-300 col-span-12 lg:col-span-6 rounded-2xl">
               <Image
+                unoptimized
+                width={100}
+                height={100}
                 src={IMAGE_2}
                 alt="Loading..."
                 className="rounded-xl object-cover h-full w-full"
@@ -105,6 +110,9 @@ const ProjectsGrid = ({ grid }) => {
           <div className="justify-center bg-gray-100 h-full grid grid-cols-12 gap-6 p-3 lg:px-7 lg:py-10 col-span-12 lg:col-span-6 rounded-2xl">
             <div className="p-3 lg:p-5 bg-gray-300 col-span-12 lg:col-span-6 rounded-2xl">
               <Image
+                unoptimized
+                width={100}
+                height={100}
                 src={IMAGE_3}
                 alt="Loading..."
                 className="rounded-xl object-cover h-full w-full"
