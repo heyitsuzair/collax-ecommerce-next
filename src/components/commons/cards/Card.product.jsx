@@ -9,7 +9,7 @@ const CardProduct = () => {
   /**
    * Const Product Image
    */
-  const PRODUCT_IMAGE = require("../../../img/port1.png");
+  const PRODUCT_IMAGE = "/img/port1.png";
 
   /**
    * Capture On Card Mouse Enter
@@ -59,7 +59,10 @@ const CardProduct = () => {
         </button>
       </div>
       <Image
+        unoptimized
         src={PRODUCT_IMAGE}
+        width={100}
+        height={100}
         alt="Loading..."
         className="w-full h-72 object-cover"
       />

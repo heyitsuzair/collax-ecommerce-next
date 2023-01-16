@@ -7,7 +7,7 @@ const Hero = () => {
   /**
    * Image For Hero
    */
-  const HERO_IMAGE = require("../../../img/hero-2.png");
+  const HERO_IMAGE = "/img/hero-2.png";
 
   return (
     <div>
@@ -43,6 +43,9 @@ const Hero = () => {
         <div className="right hidden lg:block z-[2] col-span-12 lg:col-span-5 lg:mt-40">
           <Image
             src={HERO_IMAGE}
+            unoptimized
+            width={100}
+            height={100}
             alt="Loading..."
             className="w-80 lg:w-3/4 mx-auto"
           />

@@ -7,11 +7,14 @@ const Logo = ({ height }) => {
   /**
    * Path
    */
-  const logo = require(`../../../img/logo.png`);
+  const logo = "/img/logo.png";
 
   return (
     <Image
+      unoptimized
       src={logo}
+      width={100}
+      height={100}
       alt="Loading..."
       className={`${imageHeight} object-cover`}
     />
