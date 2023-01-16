@@ -100,6 +100,7 @@ const ContactForm = () => {
               onClick={handleSubmit}
               size="large"
               text="Send Message"
+              textColor="text-black hover:text-white"
               buttonColor="bg-yellow-400 hover:bg-indigo-500"
             />
           )}
