@@ -55,7 +55,7 @@ const ProductInfo = () => {
           buttonColor="bg-yellow-300 hover:bg-indigo-500"
         />
         <PlainButton
-          onClick={() => alert("add to cart")}
+          onClick={() => alert("buy now")}
           text="Buy Now"
           textColor="text-black"
           buttonColor="hover:bg-yellow-300 bg-indigo-400"
