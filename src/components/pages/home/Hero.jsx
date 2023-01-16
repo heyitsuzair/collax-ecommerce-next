@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="bg-indigo-500 rounded-full hidden lg:block lg:w-[690px] lg:h-[690px] z-[1] absolute -right-[29rem] -top-36"></div>
 
       <div className="h-screen gap-8 grid grid-cols-12">
-        <div className="left col-span-12 lg:col-span-7 p-10 lg:pl-24 lg:pt-16 mt-[20vh] lg:mt-40 flex flex-col gap-8 lg:gap-12">
+        <div className="left col-span-12 lg:col-span-7 p-10 lg:pl-24 lg:pt-16 mt-[25vh] lg:mt-40 flex flex-col gap-8 lg:gap-12">
           <Text7Xl
             text="We make things look good"
             classes={"text-gray-900 font-bold dm-sans"}
