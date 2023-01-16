@@ -105,6 +105,11 @@ import ReactToastifyContainer from "./toast/ReactToastifyContainer";
 import BadgePlain from "./badges/Badge.plain";
 import BadgeGroup from "./badges/Badge.group";
 
+/**
+ * Selects
+ */
+import SelectPlain from "./selects/Select.plain";
+
 export {
   Logo,
   Navbar,
@@ -145,4 +150,5 @@ export {
   ReactToastifyContainer,
   BadgePlain,
   BadgeGroup,
+  SelectPlain,
 };
