@@ -99,6 +99,12 @@ import SpinnerMedium from "./spinners/SpinnerMedium";
  */
 import ReactToastifyContainer from "./toast/ReactToastifyContainer";
 
+/**
+ * Badges
+ */
+import BadgePlain from "./badges/Badge.plain";
+import BadgeGroup from "./badges/Badge.group";
+
 export {
   Logo,
   Navbar,
@@ -137,4 +143,6 @@ export {
   SpinnerSmall,
   SpinnerMedium,
   ReactToastifyContainer,
+  BadgePlain,
+  BadgeGroup,
 };

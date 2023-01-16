@@ -11,7 +11,7 @@ const ScaledButton = ({
 }) => {
   let buttonSize = "h-12 w-48";
   let buttonBorderRadius = "rounded-lg";
-  let buttonShadow;
+  let buttonShadow = "";
 
   /**
    * Check What Size We Got As Prop And Than Set Size And Border Radius Accordingly

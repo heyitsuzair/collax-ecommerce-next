@@ -67,7 +67,7 @@ const CardProduct = () => {
         className="w-full h-72 object-cover"
       />
       <div>
-        <Link href="/product/1">
+        <Link href="/product/iphone-12">
           <TextXl
             text="Product Name,Product NameProduct Name"
             classes="!text-black hover:!text-indigo-500 transition-all font-medium text-center md:min-h-[5.5rem] md:max-h-[5.5rem] lg:min-h-[4rem] lg:max-h-[4rem]"
