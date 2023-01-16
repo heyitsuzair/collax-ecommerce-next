@@ -31,8 +31,8 @@ const CardProduct = () => {
       onMouseLeave={onCardMouseLeave}
     >
       <div
-        className={`overlay absolute flex gap-4 items-center justify-center top-0 w-full h-72 transition-all duration-500 ${
-          isCardHover && "bg-[rgba(0,0,0,0.3)]"
+        className={`overlay absolute flex gap-4 items-center justify-center top-0 w-[92%] sm:w-full h-72 transition-all duration-500 ${
+          isCardHover && "bg-[rgba(0,0,0,0.4)]"
         }`}
       >
         <button

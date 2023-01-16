@@ -16,7 +16,7 @@ const Logo = ({ height }) => {
       width={100}
       height={100}
       alt="Loading..."
-      className={`${imageHeight} object-cover`}
+      className={`${imageHeight} w-full object-cover`}
     />
   );
 };
