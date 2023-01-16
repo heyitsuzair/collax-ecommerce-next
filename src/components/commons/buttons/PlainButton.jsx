@@ -11,7 +11,7 @@ const PlainButton = ({
 }) => {
   let buttonSize = "h-12 w-48";
   let buttonBorderRadius = "rounded-lg";
-  let buttonShadow;
+  let buttonShadow = "";
 
   /**
    * Check What Size We Got As Prop And Than Set Size And Border Radius Accordingly
@@ -31,7 +31,7 @@ const PlainButton = ({
     buttonColor = "bg-indigo-600";
   }
   /**
-   * Check Whether the button color is provided or not
+   * Check Whether the text color is provided or not
    */
   if (!textColor) {
     textColor = "text-white";
@@ -48,11 +48,9 @@ const PlainButton = ({
     <button
       type="button"
       onClick={onClick}
-      className={`b ${buttonSize} ${buttonColor} transition-all duration-300 flex justify-center items-center ${buttonBorderRadius} ${buttonShadow} `}
+      className={`b ${buttonSize} ${buttonColor} ${textColor} transition-all duration-300 flex justify-center items-center ${buttonBorderRadius} ${buttonShadow} `}
     >
-      <span
-        className={`text-center ${textColor} font-semibold z-[2] pointer-events-none`}
-      >
+      <span className={`text-center font-semibold z-[2] pointer-events-none`}>
         {text}
 
         {icon && (
