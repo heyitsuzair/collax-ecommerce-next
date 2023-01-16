@@ -22,7 +22,7 @@ const BadgeGroup = ({ badgeColor, badgesArray, activeBadge, onBadgeClick }) => {
               classes={`${
                 activeBadge === index
                   ? "bg-yellow-300 !text-black"
-                  : "bg-gray-100 text-gray-500"
+                  : "bg-gray-100 !text-gray-500"
               } ${bgColor}`}
             />
           </div>
