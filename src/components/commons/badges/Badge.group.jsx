@@ -1,13 +1,27 @@
 import React from "react";
 import { BadgePlain } from "../index";
 
-const BadgeGroup = ({ badgeColor, badgesArray, activeBadge, onBadgeClick }) => {
+const BadgeGroup = ({
+  badgeClasses,
+  badgesArray,
+  activeBadge,
+  onBadgeClick,
+}) => {
   /**
    * Badge Background Color
    */
-  const bgColor = badgeColor
-    ? badgeColor
+  const bgColor = badgeClasses
+    ? badgeClasses
     : "hover:!bg-yellow-300 cursor-pointer hover:!text-black py-1.5 px-4";
+
+  /**
+   * @function badgeState Returns the classes of active badge if @param {index} === @state {activeBadge} else it returns the default badge classes
+   */
+  const badgeState = (index) => {
+    return activeBadge === index
+      ? "bg-yellow-300 !text-black"
+      : "bg-gray-100 !text-gray-500";
+  };
 
   return (
     <div className="flex gap-3 items-center">
@@ -19,11 +33,7 @@ const BadgeGroup = ({ badgeColor, badgesArray, activeBadge, onBadgeClick }) => {
           >
             <BadgePlain
               text={badge}
-              classes={`${
-                activeBadge === index
-                  ? "bg-yellow-300 !text-black"
-                  : "bg-gray-100 !text-gray-500"
-              } ${bgColor}`}
+              classes={`${badgeState(index)} ${bgColor}`}
             />
           </div>
         );
