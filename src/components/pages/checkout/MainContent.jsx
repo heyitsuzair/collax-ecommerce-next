@@ -1,5 +1,6 @@
 import React from "react";
 import BillingDetails from "./BillingDetails";
+import YourOrder from "./YourOrder";
 
 const MainContent = () => {
   return (
@@ -8,7 +9,9 @@ const MainContent = () => {
         <div className="col-span-12 md:col-span-6">
           <BillingDetails />
         </div>
-        <div className="col-span-12 md:col-span-6">Hello</div>
+        <div className="col-span-12 md:col-span-6">
+          <YourOrder />
+        </div>
       </div>
     </div>
   );
