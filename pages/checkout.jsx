@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { BreadcrumbTopPage } from "../src/components/commons";
-import { MainContent } from "../src/components/pages/Checkout";
+import { MainContent } from "../src/components/pages/checkout";
 
 const Checkout = () => {
   return (
