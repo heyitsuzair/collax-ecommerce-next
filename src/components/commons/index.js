@@ -105,6 +105,17 @@ import ReactToastifyContainer from "./toast/ReactToastifyContainer";
 import BadgePlain from "./badges/Badge.plain";
 import BadgeGroup from "./badges/Badge.group";
 
+/**
+ * Selects
+ */
+import SelectPlain from "./selects/Select.plain";
+
+/**
+ * Radios
+ */
+import RadioPlain from "./radios/Radio.plain";
+import RadioGroup from "./radios/Radio.group";
+
 export {
   Logo,
   Navbar,
@@ -145,4 +156,7 @@ export {
   ReactToastifyContainer,
   BadgePlain,
   BadgeGroup,
+  SelectPlain,
+  RadioPlain,
+  RadioGroup,
 };

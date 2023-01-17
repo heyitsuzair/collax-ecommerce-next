@@ -1,9 +1,8 @@
 import React from "react";
 import { TextError } from "../index";
 
-const InputPlain = ({
+const SelectPlain = ({
   id,
-  type,
   name,
   placeholder,
   onChange,
@@ -12,6 +11,7 @@ const InputPlain = ({
   errorText,
   value,
   onBlur,
+  options,
   isRequired,
 }) => {
   return (
@@ -24,16 +24,23 @@ const InputPlain = ({
           {label} {isRequired && <span className="text-red-500">*</span>}
         </label>
       )}
-      <input
-        type={type}
+      <select
         name={name}
         onBlur={onBlur}
         id={id}
         value={value}
         onChange={onChange}
-        placeholder={placeholder}
-        className="border outline-0 rounded-lg p-3 w-full"
-      />
+        className="border outline-0 bg-white rounded-lg p-3 w-full"
+      >
+        <option value="">{placeholder}</option>
+        {options.map((option) => {
+          return (
+            <option key={option.value} value={option.value}>
+              {option.value}
+            </option>
+          );
+        })}
+      </select>
       {error && (
         <div className="mt-1">
           <TextError text={errorText} />
@@ -43,4 +50,4 @@ const InputPlain = ({
   );
 };
 
-export default InputPlain;
+export default SelectPlain;
