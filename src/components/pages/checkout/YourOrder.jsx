@@ -1,7 +1,33 @@
 import React from "react";
-import { Text3Xl, TextLg, TextSm } from "../../commons";
+import {
+  PlainButton,
+  SpinnerMedium,
+  Text3Xl,
+  TextLg,
+  TextSm,
+} from "../../commons";
+import PaymentMethods from "./PaymentMethods";
 
-const YourOrder = () => {
+const YourOrder = ({
+  isLoading,
+  handleSubmit,
+  handleChange,
+  handleBlur,
+  values,
+  touched,
+  errors,
+}) => {
+  /**
+   * Props For  Payment Methods Component
+   */
+  const PaymentMethodProps = {
+    handleChange,
+    handleBlur,
+    values,
+    touched,
+    errors,
+  };
+
   return (
     <div>
       <div>
@@ -27,6 +53,21 @@ const YourOrder = () => {
           <TextSm text="Order Total" classes="!text-gray-500" />
           <TextLg text="$400" classes="!text-black font-bold" />
         </div>
+      </div>
+      <div className="col-span-12">
+        <PaymentMethods {...PaymentMethodProps} />
+      </div>
+      <div className="col-span-12 mt-4 text-center my-5">
+        {isLoading ? (
+          <SpinnerMedium />
+        ) : (
+          <PlainButton
+            onClick={handleSubmit}
+            text="Place Order"
+            textColor="hover:text-black text-white"
+            buttonColor="hover:bg-yellow-400 bg-indigo-500 w-full"
+          />
+        )}
       </div>
     </div>
   );

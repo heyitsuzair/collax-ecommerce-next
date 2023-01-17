@@ -110,6 +110,12 @@ import BadgeGroup from "./badges/Badge.group";
  */
 import SelectPlain from "./selects/Select.plain";
 
+/**
+ * Radios
+ */
+import RadioPlain from "./radios/Radio.plain";
+import RadioGroup from "./radios/Radio.group";
+
 export {
   Logo,
   Navbar,
@@ -151,4 +157,6 @@ export {
   BadgePlain,
   BadgeGroup,
   SelectPlain,
+  RadioPlain,
+  RadioGroup,
 };

@@ -1,8 +1,5 @@
-import { useFormik } from "formik";
-import React, { useState } from "react";
-import { toast } from "react-toastify";
+import React from "react";
 import { Countries } from "../../../config";
-import { CheckoutFormSchema } from "../../../yupSchemas";
 import {
   InputPlain,
   PlainButton,
@@ -11,57 +8,13 @@ import {
   Text3Xl,
 } from "../../commons";
 
-const BillingDetails = () => {
-  /**
-   * State For Loading On Form Submission
-   */
-  const [isLoading, setIsLoading] = useState(false);
-
-  /**
-   * @var initialValues Form Initial Values
-   */
-
-  const initialValues = {
-    country: "",
-    first_name: "",
-    last_name: "",
-    company: "",
-    street_address: "",
-    apartment_no: "",
-    city: "",
-    province: "",
-    zip: "",
-    email: "",
-    phone_no: "",
-  };
-
-  /**
-   * @function onSubmit When Someone Submits Billing Form, this function gets triggered
-   */
-
-  const onSubmit = async (values, actions) => {
-    /**
-     * Start Loading
-     */
-    setIsLoading(true);
-
-    setTimeout(() => {
-      toast.success("Order Placed!");
-      setIsLoading(false);
-      actions.resetForm();
-    }, 1500);
-  };
-
-  /**
-   * Formik Configuration
-   */
-  const { values, touched, errors, handleBlur, handleChange, handleSubmit } =
-    useFormik({
-      validationSchema: CheckoutFormSchema,
-      initialValues,
-      onSubmit,
-    });
-
+const BillingDetails = ({
+  values,
+  errors,
+  touched,
+  handleBlur,
+  handleChange,
+}) => {
   return (
     <div>
       <Text3Xl
@@ -78,6 +31,7 @@ const BillingDetails = () => {
               isRequired
               error={errors.country && touched.country}
               errorText={errors.country}
+              value={values.country}
               name="country"
               placeholder={"Select a country"}
               options={Countries}
@@ -220,18 +174,6 @@ const BillingDetails = () => {
               error={errors.phone_no && touched.phone_no}
               errorText={errors.phone_no}
             />
-          </div>
-          <div className="col-span-12">
-            {isLoading ? (
-              <SpinnerMedium />
-            ) : (
-              <PlainButton
-                onClick={handleSubmit}
-                text="Place Order"
-                textColor="text-black hover:text-white"
-                buttonColor="bg-yellow-400 hover:bg-indigo-500"
-              />
-            )}
           </div>
         </div>
       </form>
