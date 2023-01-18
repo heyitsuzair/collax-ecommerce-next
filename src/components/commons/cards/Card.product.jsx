@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { IconHoverable, TextMd, TextXl } from "../../commons";
 
 const CardProduct = ({ product_image, slug, product_title, price }) => {

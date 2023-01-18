@@ -15,7 +15,7 @@ const MainContent = () => {
         </div>
       </div>
       <div className="related-products my-36 md:my-44">
-        <RelatedProducts />
+        {/* <RelatedProducts /> */}
       </div>
     </div>
   );
