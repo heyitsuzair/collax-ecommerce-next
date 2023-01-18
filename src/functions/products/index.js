@@ -12,3 +12,25 @@ export const getProducts = async (page) => {
     return error.response.data;
   }
 };
+export const getRelatedProducts = async (slug) => {
+  try {
+    const { data } = await axios.get(
+      Endpoints.getProducts + `?filters[slug][$ne]=${slug}&populate=*`,
+      getConfig
+    );
+    return data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+export const getProduct = async (slug) => {
+  try {
+    const { data } = await axios.get(
+      Endpoints.getProduct + `?filters[slug][$eq]=${slug}&populate=*`,
+      getConfig
+    );
+    return data;
+  } catch (error) {
+    return error.response.data;
+  }
+};

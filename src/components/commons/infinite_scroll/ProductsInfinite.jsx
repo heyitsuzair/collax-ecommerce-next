@@ -30,7 +30,7 @@ const ProductsInfinite = ({ productsData, fetchNextData, meta }) => {
       dataLength={productsData.length} //This is important field to render the next data
       next={fetchNextData}
       hasMore={hasMore}
-      style={{ overflowY: "hidden" }}
+      style={{ overflow: "hidden" }}
       loader={loader()}
       scrollThreshold={0.6}
       endMessage={endMessage()}
