@@ -5,6 +5,30 @@ import { MainContent } from "../src/components/pages/shop";
 import { getProducts } from "../src/functions/products";
 
 const Shop = ({ products }) => {
+  const [productsData, setProductsData] = useState(products);
+
+  /**
+   * @function fetchNextData Fetch Data When Visitor Reaches Infinite Scroll End
+   */
+  const fetchNextData = async () => {
+    const pageNo = productsData.meta.pagination.page + 1;
+    const products = await getProducts(pageNo);
+    const newData = {
+      data: [...productsData.data, ...products.data],
+      meta: products.meta,
+    };
+    setProductsData(newData);
+  };
+
+  /**
+   * Main Content Props
+   */
+  const MainContentProps = {
+    products: productsData.data,
+    meta: productsData.meta,
+    fetchNextData: fetchNextData,
+  };
+
   return (
     <>
       <Head>
@@ -23,7 +47,7 @@ const Shop = ({ products }) => {
         </div>
       ) : (
         <div className="content">
-          <MainContent products={products.data} meta={products.meta} />
+          <MainContent {...MainContentProps} />
         </div>
       )}
     </>
@@ -31,7 +55,7 @@ const Shop = ({ products }) => {
 };
 
 export async function getServerSideProps() {
-  const products = await getProducts();
+  const products = await getProducts(1);
 
   return {
     props: { products },

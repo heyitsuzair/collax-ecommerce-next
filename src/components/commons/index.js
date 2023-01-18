@@ -116,6 +116,11 @@ import SelectPlain from "./selects/Select.plain";
 import RadioPlain from "./radios/Radio.plain";
 import RadioGroup from "./radios/Radio.group";
 
+/**
+ * Infinite Scroll
+ */
+import ProductsInfinite from "./infinite_scroll/ProductsInfinite";
+
 export {
   Logo,
   Navbar,
@@ -159,4 +164,5 @@ export {
   SelectPlain,
   RadioPlain,
   RadioGroup,
+  ProductsInfinite,
 };
