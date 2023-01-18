@@ -7,7 +7,14 @@ import {
   TextMd,
 } from "../../commons";
 
-const ProductInfo = () => {
+const ProductInfo = ({
+  product_title,
+  price,
+  product_description,
+  colors,
+  sizes,
+  available_qty,
+}) => {
   /**
    * State For Selected Color
    */
@@ -17,31 +24,33 @@ const ProductInfo = () => {
    */
   const [selectedSize, setSelectedSize] = useState(0);
 
-  const colors = ["Green", "Red", "Blue"];
-
-  const sizes = ["S", "M", "L"];
-
   return (
     <div className="flex flex-col justify-between h-[32rem] gap-3">
-      <Text3Xl text="Product Title" classes="!text-gray-800 !font-medium" />
+      <Text3Xl text={product_title} classes="!text-gray-800 !font-medium" />
       <TextMd
-        text="Rorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.Rorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
+        text={product_description}
         classes="!text-gray-400 !font-normal"
       />
-      <Text4Xl text="$80" classes="!text-black font-semibold" />
+      <Text4Xl text={`$${price}`} classes="!text-black font-semibold" />
       <div className="flex flex-col gap-4">
         <div>
-          <TextMd text="Colors" classes="!text-black mb-2 font-medium" />
+          <TextMd
+            text="Colors"
+            classes="!text-black mb-2 capitalize font-medium"
+          />
           <BadgeGroup
-            badgesArray={colors}
+            badgesArray={colors ? colors : []}
             activeBadge={selectedColor}
             onBadgeClick={setSelectedColor}
           />
         </div>
         <div>
-          <TextMd text="Sizes" classes="!text-black mb-2 font-medium" />
+          <TextMd
+            text="Sizes"
+            classes="!text-black mb-2 capitalize font-medium"
+          />
           <BadgeGroup
-            badgesArray={sizes}
+            badgesArray={sizes ? sizes : []}
             activeBadge={selectedSize}
             onBadgeClick={setSelectedSize}
           />
@@ -51,14 +60,16 @@ const ProductInfo = () => {
         <PlainButton
           onClick={() => alert("add to cart")}
           text="Add To Cart"
-          textColor="text-black hover:text-white"
-          buttonColor="bg-yellow-300 hover:bg-indigo-500"
+          isDisabled={available_qty < 1}
+          textColor="text-black hover:text-white disabled:hover:text-black"
+          buttonColor="bg-yellow-300 hover:bg-indigo-500 disabled:hover:bg-yellow-300"
         />
         <PlainButton
           onClick={() => alert("buy now")}
           text="Buy Now"
+          isDisabled={available_qty < 1}
           textColor="text-black"
-          buttonColor="hover:bg-yellow-300 bg-indigo-400"
+          buttonColor="bg-indigo-400 hover:bg-yellow-300 disabled:hover:bg-indigo-400"
         />
       </div>
     </div>

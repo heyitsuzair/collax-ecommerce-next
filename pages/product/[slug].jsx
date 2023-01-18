@@ -1,15 +1,17 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import React from "react";
 import { BreadcrumbTopPage } from "../../src/components/commons";
 import { MainContent } from "../../src/components/pages/product";
+import { getProduct, getRelatedProducts } from "../../src/functions/products";
 
-const Slug = () => {
+const Slug = ({ product, products }) => {
   /**
-   * @param {string}
+   * Main Content Props
    */
-  const { query } = useRouter();
-  const { slug } = query;
+  const MainContentProps = {
+    product: product ? product.data[0].attributes : [],
+    products: products.data,
+  };
 
   return (
     <>
@@ -24,10 +26,20 @@ const Slug = () => {
       </Head>
       <BreadcrumbTopPage text="Product Details" />
       <div className="content">
-        <MainContent />
+        <MainContent {...MainContentProps} />
       </div>
     </>
   );
 };
+
+export async function getServerSideProps({ query }) {
+  const { slug } = query;
+
+  const product = await getProduct(slug);
+
+  const products = await getRelatedProducts(slug);
+
+  return { props: { product, products } };
+}
 
 export default Slug;

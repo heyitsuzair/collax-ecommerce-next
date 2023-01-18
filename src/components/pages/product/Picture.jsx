@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-const Picture = () => {
+const Picture = ({ product_image }) => {
   /**
    * Product Picture
    */
-  const PRODUCT_PICTURE = "/img/port1.png";
+  const PRODUCT_PICTURE = product_image.data.attributes.url;
 
   return (
     <Image

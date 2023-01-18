@@ -8,6 +8,7 @@ const PlainButton = ({
   buttonColor,
   textColor,
   shadow,
+  isDisabled,
 }) => {
   let buttonSize = "h-12 w-48";
   let buttonBorderRadius = "rounded-lg";
@@ -47,8 +48,9 @@ const PlainButton = ({
   return (
     <button
       type="button"
+      disabled={isDisabled}
       onClick={onClick}
-      className={`b ${buttonSize} ${buttonColor} ${textColor} transition-all duration-300 flex justify-center items-center ${buttonBorderRadius} ${buttonShadow} `}
+      className={`b ${buttonSize} ${buttonColor} ${textColor} transition-all duration-300 flex justify-center items-center ${buttonBorderRadius} ${buttonShadow} disabled:opacity-60`}
     >
       <span className={`text-center font-semibold z-[2] pointer-events-none`}>
         {text}
