@@ -3,13 +3,13 @@ import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { IconHoverable, TextMd, TextXl } from "../../commons";
 
-const CardProduct = () => {
+const CardProduct = ({ product_image, slug, product_title, price }) => {
   const [isCardHover, setIsCardHover] = useState(false);
 
   /**
    * Const Product Image
    */
-  const PRODUCT_IMAGE = "/img/port1.png";
+  const PRODUCT_IMAGE = product_image.data.attributes.url;
 
   /**
    * Capture On Card Mouse Enter
@@ -67,14 +67,14 @@ const CardProduct = () => {
         className="w-full h-72 object-cover"
       />
       <div>
-        <Link href="/product/iphone-12">
+        <Link href={`/product/${slug}`}>
           <TextXl
-            text="Product Name,Product NameProduct Name"
+            text={product_title}
             classes="!text-black hover:!text-indigo-500 transition-all font-medium text-center md:min-h-[5.5rem] md:max-h-[5.5rem] lg:min-h-[4rem] lg:max-h-[4rem]"
           />
         </Link>
         <TextMd
-          text="$400"
+          text={`$${price}`}
           classes="!text-gray-500 font-medium mt-2 text-center"
         />
       </div>
