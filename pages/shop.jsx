@@ -1,6 +1,6 @@
 import Head from "next/head";
-import React from "react";
-import { BreadcrumbTopPage } from "../src/components/commons";
+import React, { useState } from "react";
+import { BreadcrumbTopPage, SpinnerLarge } from "../src/components/commons";
 import { MainContent } from "../src/components/pages/shop";
 import { getProducts } from "../src/functions/products";
 
@@ -17,9 +17,15 @@ const Shop = ({ products }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BreadcrumbTopPage text="Shop" />
-      <div className="content">
-        <MainContent products={products.data} meta={products.meta} />
-      </div>
+      {!products ? (
+        <div className="text-center my-32">
+          <SpinnerLarge />
+        </div>
+      ) : (
+        <div className="content">
+          <MainContent products={products.data} meta={products.meta} />
+        </div>
+      )}
     </>
   );
 };
