@@ -54,12 +54,10 @@ const Shop = ({ products }) => {
   );
 };
 
-export async function getServerSideProps() {
+Shop.getInitialProps = async () => {
   const products = await getProducts(1);
 
-  return {
-    props: { products },
-  };
-}
+  return { products };
+};
 
 export default Shop;
