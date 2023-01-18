@@ -2,8 +2,9 @@ import Head from "next/head";
 import React from "react";
 import { BreadcrumbTopPage } from "../src/components/commons";
 import { MainContent } from "../src/components/pages/shop";
+import { getProducts } from "../src/functions/products";
 
-const Shop = () => {
+const Shop = ({ products }) => {
   return (
     <>
       <Head>
@@ -17,10 +18,18 @@ const Shop = () => {
       </Head>
       <BreadcrumbTopPage text="Shop" />
       <div className="content">
-        <MainContent />
+        <MainContent products={products.data} meta={products.meta} />
       </div>
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const products = await getProducts();
+
+  return {
+    props: { products },
+  };
+}
 
 export default Shop;
