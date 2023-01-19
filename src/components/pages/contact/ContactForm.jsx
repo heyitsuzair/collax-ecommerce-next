@@ -5,6 +5,7 @@ import {
   InputPlain,
   PlainButton,
   SpinnerMedium,
+  SuccessMessage,
   Text6Xl,
   TextAreaPlain,
 } from "../../commons";
@@ -37,7 +38,7 @@ const ContactForm = () => {
     setIsLoading(true);
 
     setTimeout(() => {
-      toast.success("We Will Contact You Soon!");
+      SuccessMessage("We Will Contact You Soon!");
       setIsLoading(false);
       actions.resetForm();
     }, 1500);
