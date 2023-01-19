@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, { payload }) => {
       /**
-       * Find By ID
+       * Find Product By ID
        */
       const isInCart = current(state).cartItems.find(
         (item) => item.product_id === payload.product_id
@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
        */
       if (isInCart) {
         /**
-         * Find By ID
+         * Filter By ID
          */
         const isInCart = current(state).cartItems.filter(
           (item) => item.product_id !== payload.product_id
@@ -73,7 +73,7 @@ export const cartSlice = createSlice({
     },
     removeFromCart: (state, { payload }) => {
       /**
-       * Find By ID
+       * Find Product By ID
        */
       const foundItem = current(state).cartItems.find(
         (item) => item.product_id === payload
@@ -98,11 +98,51 @@ export const cartSlice = createSlice({
 
       SuccessMessage("Cart Cleared!");
     },
+    increaseQuantity: (state, { payload }) => {
+      /**
+       * Find Product By ID
+       */
+      const foundItem = state.cartItems.find(
+        (item) => item.product_id === payload
+      );
+
+      const newQuantity = foundItem.req_qty + 1;
+
+      if (foundItem.product_info.available_qty < newQuantity) {
+        return;
+      }
+      foundItem.req_qty += 1;
+
+      state.total += foundItem.product_info.price;
+    },
+    decreaseQuantity: (state, { payload }) => {
+      /**
+       * Find Product By ID
+       */
+      const foundItem = state.cartItems.find(
+        (item) => item.product_id === payload
+      );
+
+      const newQuantity = foundItem.req_qty - 1;
+
+      if (newQuantity < 1) {
+        return;
+      }
+      foundItem.req_qty -= 1;
+
+      state.total -= foundItem.product_info.price;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, clearCart, buyNow, removeFromCart } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  clearCart,
+  buyNow,
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -3,7 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconPlain } from "../../commons";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../../redux/slices/cart";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../../../redux/slices/cart";
 
 const TableRow = ({ req_qty, product_info, product_id }) => {
   /**
@@ -34,17 +38,19 @@ const TableRow = ({ req_qty, product_info, product_id }) => {
       </td>
       <td className="text-center border px-8 py-2">${product_info.price}</td>
       <td className="text-center border px-8 py-2">
-        <div className="p-3 border-2 transition-all hover:border-black flex items-center gap-5">
+        <div className="p-3 border-2 transition-all hover:border-black flex justify-between items-center">
           <div
             className="cursor-pointer"
-            onClick={() => alert("Decrease Quantity")}
+            onClick={() => dispatch(decreaseQuantity(product_id))}
           >
             <IconPlain classes="fa fa-minus" />
           </div>
-          <span>{req_qty}</span>
+          <div className="w-[7vw] text-center">
+            <span>{req_qty}</span>
+          </div>
           <div
             className="cursor-pointer"
-            onClick={() => alert("Increase Quantity")}
+            onClick={() => dispatch(increaseQuantity(product_id))}
           >
             <IconPlain classes="fa fa-plus" />
           </div>

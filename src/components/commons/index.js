@@ -99,6 +99,7 @@ import SpinnerMedium from "./spinners/SpinnerMedium";
  */
 import ReactToastifyContainer from "./toast/ReactToastifyContainer";
 import SuccessMessage from "./toast/SuccessMessage";
+import ErrorMessage from "./toast/ErrorMessage";
 
 /**
  * Badges
@@ -161,6 +162,7 @@ export {
   SpinnerMedium,
   ReactToastifyContainer,
   SuccessMessage,
+  ErrorMessage,
   BadgePlain,
   BadgeGroup,
   SelectPlain,
