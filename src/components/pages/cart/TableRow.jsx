@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconPlain } from "../../commons";
 
-const TableRow = () => {
+const TableRow = ({ req_qty, product_info, product_id }) => {
   /**
    * Image For Product
    */
-  const PRODUCT_IMAGE = "/img/port1.png";
+  const PRODUCT_IMAGE = product_info.product_image;
   return (
     <tr>
       <td className="text-center border px-8 py-2">
@@ -21,11 +21,11 @@ const TableRow = () => {
         />
       </td>
       <td className="text-center border px-8 py-2">
-        <Link href="/product/iphone-12" className="underline">
-          Dante Sparks
+        <Link href={`/product/${product_info.slug}`} className="underline">
+          {product_info.product_title}
         </Link>
       </td>
-      <td className="text-center border px-8 py-2">$40</td>
+      <td className="text-center border px-8 py-2">${product_info.price}</td>
       <td className="text-center border px-8 py-2">
         <div className="p-3 border-2 transition-all hover:border-black flex items-center gap-5">
           <div
@@ -34,7 +34,7 @@ const TableRow = () => {
           >
             <IconPlain classes="fa fa-minus" />
           </div>
-          <span>10</span>
+          <span>{req_qty}</span>
           <div
             className="cursor-pointer"
             onClick={() => alert("Increase Quantity")}
@@ -43,7 +43,9 @@ const TableRow = () => {
           </div>
         </div>
       </td>
-      <td className="text-center border px-8 py-2">$400</td>
+      <td className="text-center border px-8 py-2">
+        ${req_qty * product_info.price}
+      </td>
       <td className="text-center border px-8 py-2">
         <div
           className="cursor-pointer"

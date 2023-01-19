@@ -71,11 +71,32 @@ export const cartSlice = createSlice({
        */
       state.total += payload.req_qty * payload.product_info.price;
     },
+    removeFromCard: (state, { payload }) => {
+      /**
+       * Find By ID
+       */
+      const foundItem = current(state).cartItems.find(
+        (item) => item.product_id === payload.product_id
+      );
+      const costToDeduct = foundItem.req_qyu * foundItem.product_info.price;
+
+      total -= costToDeduct;
+
+      /**
+       * Filter By By ID
+       */
+      const filteredItems = current(state).cartItems.filter((item) => {
+        return item.product_id === payload.product_id;
+      });
+      state.cartItems = filteredItems;
+    },
     clearCart: (state) => {
       // Set Cart Back To Its Initial State
 
       state.cartItems = [];
       state.total = 0;
+
+      SuccessMessage("Cart Cleared!");
     },
   },
 });
