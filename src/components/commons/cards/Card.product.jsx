@@ -65,6 +65,7 @@ const CardProduct = ({
       product_info: {
         product_image: product_image.data.attributes.url,
         product_title,
+        slug,
         price,
         product_description,
         available_qty,
@@ -88,6 +89,7 @@ const CardProduct = ({
       product_info: {
         product_image: product_image.data.attributes.url,
         product_title,
+        slug,
         price,
         product_description,
         available_qty,

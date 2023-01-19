@@ -14,10 +14,12 @@ const Slug = ({ product, products }) => {
     product_id: product ? product.data[0].id : 0,
   };
 
+  const title = (document.title = product.data[0].attributes.product_title);
+
   return (
     <>
       <Head>
-        <title>Product Details</title>
+        <title>{title}</title>
         <meta
           name="description"
           content="Ecommerce Product Details. Made With Heart By UZAIR"

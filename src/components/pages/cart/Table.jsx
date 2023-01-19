@@ -1,7 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import EmptyRow from "./EmptyRow";
 import TableRow from "./TableRow";
 
 const Table = () => {
+  /**
+   * Redux Helper functions
+   */
+  const cart = useSelector((store) => store.cart);
+
   return (
     <div className="overflow-x">
       <table className="w-full table-auto overflow-scroll block md:table">
@@ -16,12 +23,15 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          <TableRow />
-          <TableRow />
-          <TableRow />
-          <TableRow />
-          <TableRow />
-          <TableRow />
+          {cart.cartItems.length < 1 ? (
+            <EmptyRow />
+          ) : (
+            <>
+              {cart.cartItems.map((item) => {
+                return <TableRow key={item.product_id} {...item} />;
+              })}
+            </>
+          )}
         </tbody>
       </table>
     </div>

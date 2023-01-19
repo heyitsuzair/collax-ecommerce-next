@@ -2,12 +2,23 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IconPlain } from "../../commons";
+import { useDispatch } from "react-redux";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../../../redux/slices/cart";
 
-const TableRow = () => {
+const TableRow = ({ req_qty, product_info, product_id }) => {
   /**
    * Image For Product
    */
-  const PRODUCT_IMAGE = "/img/port1.png";
+  const PRODUCT_IMAGE = product_info.product_image;
+
+  /**
+   * Redux Helper Functions
+   */
+  const dispatch = useDispatch();
   return (
     <tr>
       <td className="text-center border px-8 py-2">
@@ -21,33 +32,37 @@ const TableRow = () => {
         />
       </td>
       <td className="text-center border px-8 py-2">
-        <Link href="/product/iphone-12" className="underline">
-          Dante Sparks
+        <Link href={`/product/${product_info.slug}`} className="underline">
+          {product_info.product_title}
         </Link>
       </td>
-      <td className="text-center border px-8 py-2">$40</td>
+      <td className="text-center border px-8 py-2">${product_info.price}</td>
       <td className="text-center border px-8 py-2">
-        <div className="p-3 border-2 transition-all hover:border-black flex items-center gap-5">
+        <div className="p-3 border-2 transition-all hover:border-black flex justify-between items-center">
           <div
             className="cursor-pointer"
-            onClick={() => alert("Decrease Quantity")}
+            onClick={() => dispatch(decreaseQuantity(product_id))}
           >
             <IconPlain classes="fa fa-minus" />
           </div>
-          <span>10</span>
+          <div className="w-[5vw] text-center">
+            <span>{req_qty}</span>
+          </div>
           <div
             className="cursor-pointer"
-            onClick={() => alert("Increase Quantity")}
+            onClick={() => dispatch(increaseQuantity(product_id))}
           >
             <IconPlain classes="fa fa-plus" />
           </div>
         </div>
       </td>
-      <td className="text-center border px-8 py-2">$400</td>
+      <td className="text-center border px-8 py-2">
+        ${req_qty * product_info.price}
+      </td>
       <td className="text-center border px-8 py-2">
         <div
           className="cursor-pointer"
-          onClick={() => alert("Remove From Cart")}
+          onClick={() => dispatch(removeFromCart(product_id))}
         >
           <IconPlain classes="fa fa-xmark" />
         </div>

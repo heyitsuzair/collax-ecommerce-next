@@ -20,6 +20,7 @@ const ProductInfo = ({
   colors,
   sizes,
   available_qty,
+  slug,
 }) => {
   const router = useRouter();
 
@@ -51,6 +52,7 @@ const ProductInfo = ({
       product_info: {
         product_image: product_image.data.attributes.url,
         product_title,
+        slug,
         price,
         product_description,
         available_qty,
@@ -74,6 +76,7 @@ const ProductInfo = ({
       product_info: {
         product_image: product_image.data.attributes.url,
         product_title,
+        slug,
         price,
         product_description,
         available_qty,
