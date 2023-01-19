@@ -15,6 +15,7 @@ const CardProduct = ({
   sizes,
   colors,
   available_qty,
+  product_description,
 }) => {
   const [isCardHover, setIsCardHover] = useState(false);
   const router = useRouter();
@@ -61,9 +62,14 @@ const CardProduct = ({
     }
     const data = {
       product_id: id,
+      product_info: {
+        product_image: product_image.data.attributes.url,
+        product_title,
+        price,
+        product_description,
+        available_qty,
+      },
       req_qty: 1,
-      price,
-      available_qty,
       size: sizes[0],
       color: colors[0],
     };
@@ -79,9 +85,14 @@ const CardProduct = ({
   const onBuyNow = () => {
     const data = {
       product_id: id,
+      product_info: {
+        product_image: product_image.data.attributes.url,
+        product_title,
+        price,
+        product_description,
+        available_qty,
+      },
       req_qty: 1,
-      price,
-      available_qty,
       size: sizes[0],
       color: colors[0],
     };

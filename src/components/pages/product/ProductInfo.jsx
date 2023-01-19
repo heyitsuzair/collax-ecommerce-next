@@ -14,6 +14,7 @@ import {
 const ProductInfo = ({
   id,
   product_title,
+  product_image,
   price,
   product_description,
   colors,
@@ -47,9 +48,14 @@ const ProductInfo = ({
   const onAddToCart = () => {
     const data = {
       product_id: id,
+      product_info: {
+        product_image: product_image.data.attributes.url,
+        product_title,
+        price,
+        product_description,
+        available_qty,
+      },
       req_qty: 1,
-      price,
-      available_qty,
       size: sizes[selectedSize],
       color: colors[selectedColor],
     };
@@ -65,9 +71,14 @@ const ProductInfo = ({
   const onBuyNow = () => {
     const data = {
       product_id: id,
+      product_info: {
+        product_image: product_image.data.attributes.url,
+        product_title,
+        price,
+        product_description,
+        available_qty,
+      },
       req_qty: 1,
-      price,
-      available_qty,
       size: sizes[selectedSize],
       color: colors[selectedColor],
     };

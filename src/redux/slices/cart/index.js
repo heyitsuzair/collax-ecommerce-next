@@ -53,7 +53,7 @@ export const cartSlice = createSlice({
       /**
        * Calculate Total
        */
-      state.total += payload.req_qty * payload.price;
+      state.total += payload.req_qty * payload.product_info.price;
 
       /**
        * Show Toast
@@ -69,7 +69,7 @@ export const cartSlice = createSlice({
       /**
        * Calculate Total
        */
-      state.total += payload.req_qty * payload.price;
+      state.total += payload.req_qty * payload.product_info.price;
     },
     clearCart: (state) => {
       // Set Cart Back To Its Initial State
