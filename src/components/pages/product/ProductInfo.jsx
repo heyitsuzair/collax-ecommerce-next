@@ -1,7 +1,8 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../redux/slices/cart";
+import { addToCart, buyNow, clearCart } from "../../../redux/slices/cart";
 import {
   BadgeGroup,
   PlainButton,
@@ -13,12 +14,15 @@ import {
 const ProductInfo = ({
   id,
   product_title,
+  product_image,
   price,
   product_description,
   colors,
   sizes,
   available_qty,
 }) => {
+  const router = useRouter();
+
   /**
    * State For Selected Color
    */
@@ -44,8 +48,14 @@ const ProductInfo = ({
   const onAddToCart = () => {
     const data = {
       product_id: id,
+      product_info: {
+        product_image: product_image.data.attributes.url,
+        product_title,
+        price,
+        product_description,
+        available_qty,
+      },
       req_qty: 1,
-      price: price,
       size: sizes[selectedSize],
       color: colors[selectedColor],
     };
@@ -53,6 +63,35 @@ const ProductInfo = ({
      * Trigger "addToCart" function of cart slice
      */
     dispatch(addToCart(data));
+  };
+
+  /**
+   * @function onBuyNow Triggers When Someone Click On "Buy Now"
+   */
+  const onBuyNow = () => {
+    const data = {
+      product_id: id,
+      product_info: {
+        product_image: product_image.data.attributes.url,
+        product_title,
+        price,
+        product_description,
+        available_qty,
+      },
+      req_qty: 1,
+      size: sizes[selectedSize],
+      color: colors[selectedColor],
+    };
+    /**
+     * Trigger "clearCart" function of cart slice
+     */
+    dispatch(clearCart());
+    /**
+     * Trigger "buyNow" function of cart slice
+     */
+    dispatch(buyNow(data));
+
+    router.push("/checkout");
   };
 
   /**
@@ -82,13 +121,14 @@ const ProductInfo = ({
     } else {
       setSelectedColor(0);
       setSelectedSize(0);
+      setIsInCart(false);
     }
   };
 
   useEffect(() => {
     isAlreadyInCart();
     //eslint-disable-next-line
-  }, [cart]);
+  }, [cart, router.query]);
 
   return (
     <div className="flex flex-col justify-between h-[32rem] gap-3">
@@ -131,7 +171,7 @@ const ProductInfo = ({
           buttonColor="bg-yellow-300 hover:bg-indigo-500 disabled:hover:bg-yellow-300"
         />
         <PlainButton
-          onClick={() => alert("buy now")}
+          onClick={() => onBuyNow()}
           text="Buy Now"
           isDisabled={available_qty < 1}
           textColor="text-black"

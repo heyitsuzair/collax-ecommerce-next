@@ -42,7 +42,7 @@ const ProductsInfinite = ({ productsData, fetchNextData, meta }) => {
               key={product.id}
               className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3"
             >
-              <CardProduct {...product.attributes} />
+              <CardProduct {...product.attributes} id={product.id} />
             </div>
           );
         })}

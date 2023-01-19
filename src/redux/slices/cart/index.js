@@ -53,17 +53,34 @@ export const cartSlice = createSlice({
       /**
        * Calculate Total
        */
-      state.total += payload.req_qty * payload.price;
+      state.total += payload.req_qty * payload.product_info.price;
 
       /**
        * Show Toast
        */
       SuccessMessage("Product Added In Cart!");
     },
+    buyNow: (state, { payload }) => {
+      /**
+       * Set New Cart
+       */
+      state.cartItems = [payload];
+
+      /**
+       * Calculate Total
+       */
+      state.total += payload.req_qty * payload.product_info.price;
+    },
+    clearCart: (state) => {
+      // Set Cart Back To Its Initial State
+
+      state.cartItems = [];
+      state.total = 0;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, clearCart, buyNow } = cartSlice.actions;
 
 export default cartSlice.reducer;
