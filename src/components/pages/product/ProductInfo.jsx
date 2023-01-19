@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,6 +20,8 @@ const ProductInfo = ({
   sizes,
   available_qty,
 }) => {
+  const router = useRouter();
+
   /**
    * State For Selected Color
    */
@@ -82,13 +85,14 @@ const ProductInfo = ({
     } else {
       setSelectedColor(0);
       setSelectedSize(0);
+      setIsInCart(false);
     }
   };
 
   useEffect(() => {
     isAlreadyInCart();
     //eslint-disable-next-line
-  }, [cart]);
+  }, [cart, router.query]);
 
   return (
     <div className="flex flex-col justify-between h-[32rem] gap-3">

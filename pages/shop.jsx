@@ -13,6 +13,7 @@ const Shop = ({ products }) => {
   const fetchNextData = async () => {
     const pageNo = productsData.meta.pagination.page + 1;
     const products = await getProducts(pageNo);
+
     const newData = {
       data: [...productsData.data, ...products.data],
       meta: products.meta,
