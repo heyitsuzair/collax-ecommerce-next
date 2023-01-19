@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Navigation } from "../../../config";
 import { Logo, NavbarOffcanvas } from "../index";
 
@@ -8,6 +9,11 @@ const Navbar = ({ minimal }) => {
    * State For Canvas
    */
   const [isCanvasOpen, setIsCanvasOpen] = useState(false);
+
+  /**
+   * Cart State
+   */
+  const cart = useSelector((store) => store.cart);
 
   useEffect(() => {
     // ** Check Whether Canvas Is Open, If Canvas Is Open Than Hide Body Overflow "Y"
@@ -47,7 +53,7 @@ const Navbar = ({ minimal }) => {
         <div>
           <Link href="/cart" className="relative">
             <div className="absolute -top-8 right-1 bg-yellow-300 w-7 h-7 rounded-full flex items-center justify-center">
-              4
+              {cart.cartItems.length}
             </div>
             <button
               className="py-3 px-5 rounded-lg shadow-xl lg:shadow-none bg-white hover:bg-yellow-300 transition-all mr-3"
@@ -100,7 +106,7 @@ const Navbar = ({ minimal }) => {
         <div>
           <Link href="/cart" className="relative">
             <div className="absolute -top-8 right-1 bg-yellow-300 w-7 h-7 rounded-full flex items-center justify-center">
-              4
+              {cart.cartItems.length}
             </div>
             <button
               className="py-3 px-5 rounded-lg bg-white hover:bg-yellow-300 transition-all mr-3"

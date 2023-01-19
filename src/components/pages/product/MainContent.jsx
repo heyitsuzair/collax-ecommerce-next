@@ -3,7 +3,7 @@ import Picture from "./Picture";
 import ProductInfo from "./ProductInfo";
 import RelatedProducts from "./RelatedProducts";
 
-const MainContent = ({ product, products }) => {
+const MainContent = ({ product, products, product_id }) => {
   /**
    * Props For Related Products Component
    */
@@ -18,7 +18,7 @@ const MainContent = ({ product, products }) => {
           <Picture {...product} />
         </div>
         <div className="col-span-12 md:col-span-6">
-          <ProductInfo {...product} />
+          <ProductInfo {...product} id={product_id} />
         </div>
       </div>
       <div className="related-products my-36 md:my-44">

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../../redux/slices/cart";
 import {
   BadgeGroup,
   PlainButton,
@@ -8,6 +11,7 @@ import {
 } from "../../commons";
 
 const ProductInfo = ({
+  id,
   product_title,
   price,
   product_description,
@@ -18,11 +22,73 @@ const ProductInfo = ({
   /**
    * State For Selected Color
    */
-  const [selectedColor, setSelectedColor] = useState(0);
+  const [selectedColor, setSelectedColor] = useState(null);
   /**
    * State For Selected Model
    */
-  const [selectedSize, setSelectedSize] = useState(0);
+  const [selectedSize, setSelectedSize] = useState(null);
+  /**
+   * State For Is In Cart
+   */
+  const [isInCart, setIsInCart] = useState(false);
+
+  /**
+   * Redux Helper Functions
+   */
+  const dispatch = useDispatch();
+  const cart = useSelector((store) => store.cart);
+
+  /**
+   * @function onAddToCart Triggers When Someone Click On "Add To Cart"
+   */
+  const onAddToCart = () => {
+    const data = {
+      product_id: id,
+      req_qty: 1,
+      price: price,
+      size: sizes[selectedSize],
+      color: colors[selectedColor],
+    };
+    /**
+     * Trigger "addToCart" function of cart slice
+     */
+    dispatch(addToCart(data));
+  };
+
+  /**
+   * @function isAlreadyInCart Check if the product is already in cart
+   */
+  const isAlreadyInCart = () => {
+    /**
+     * Find By ID
+     */
+    const isInCart = cart.cartItems.find((item) => item.product_id === id);
+
+    if (isInCart) {
+      setIsInCart(true);
+
+      /**
+       * Find The Selected Color And Make Its Badge Active
+       */
+      const selectedColor = colors.findIndex(
+        (color) => color === isInCart.color
+      );
+      setSelectedColor(selectedColor);
+      /**
+       * Find The Selected Size And Make Its Badge Active
+       */
+      const selectedSize = sizes.findIndex((size) => size === isInCart.size);
+      setSelectedSize(selectedSize);
+    } else {
+      setSelectedColor(0);
+      setSelectedSize(0);
+    }
+  };
+
+  useEffect(() => {
+    isAlreadyInCart();
+    //eslint-disable-next-line
+  }, [cart]);
 
   return (
     <div className="flex flex-col justify-between h-[32rem] gap-3">
@@ -58,8 +124,8 @@ const ProductInfo = ({
       </div>
       <div className="btn-group flex items-center gap-4">
         <PlainButton
-          onClick={() => alert("add to cart")}
-          text="Add To Cart"
+          onClick={() => onAddToCart()}
+          text={isInCart ? "Save" : "Add To Cart"}
           isDisabled={available_qty < 1}
           textColor="text-black hover:text-white disabled:hover:text-black"
           buttonColor="bg-yellow-300 hover:bg-indigo-500 disabled:hover:bg-yellow-300"

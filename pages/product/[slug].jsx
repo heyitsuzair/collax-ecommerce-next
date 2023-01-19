@@ -11,6 +11,7 @@ const Slug = ({ product, products }) => {
   const MainContentProps = {
     product: product ? product.data[0].attributes : [],
     products: products.data,
+    product_id: product ? product.data[0].id : 0,
   };
 
   return (

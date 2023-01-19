@@ -98,6 +98,7 @@ import SpinnerMedium from "./spinners/SpinnerMedium";
  * Toast
  */
 import ReactToastifyContainer from "./toast/ReactToastifyContainer";
+import SuccessMessage from "./toast/SuccessMessage";
 
 /**
  * Badges
@@ -159,6 +160,7 @@ export {
   SpinnerSmall,
   SpinnerMedium,
   ReactToastifyContainer,
+  SuccessMessage,
   BadgePlain,
   BadgeGroup,
   SelectPlain,
