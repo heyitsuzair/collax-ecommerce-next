@@ -71,22 +71,22 @@ export const cartSlice = createSlice({
        */
       state.total += payload.req_qty * payload.product_info.price;
     },
-    removeFromCard: (state, { payload }) => {
+    removeFromCart: (state, { payload }) => {
       /**
        * Find By ID
        */
       const foundItem = current(state).cartItems.find(
-        (item) => item.product_id === payload.product_id
+        (item) => item.product_id === payload
       );
-      const costToDeduct = foundItem.req_qyu * foundItem.product_info.price;
+      const costToDeduct = foundItem.req_qty * foundItem.product_info.price;
 
-      total -= costToDeduct;
+      state.total -= costToDeduct;
 
       /**
        * Filter By By ID
        */
       const filteredItems = current(state).cartItems.filter((item) => {
-        return item.product_id === payload.product_id;
+        return item.product_id !== payload;
       });
       state.cartItems = filteredItems;
     },
@@ -102,6 +102,7 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, clearCart, buyNow } = cartSlice.actions;
+export const { addToCart, clearCart, buyNow, removeFromCart } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -2,12 +2,19 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IconPlain } from "../../commons";
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../../redux/slices/cart";
 
 const TableRow = ({ req_qty, product_info, product_id }) => {
   /**
    * Image For Product
    */
   const PRODUCT_IMAGE = product_info.product_image;
+
+  /**
+   * Redux Helper Functions
+   */
+  const dispatch = useDispatch();
   return (
     <tr>
       <td className="text-center border px-8 py-2">
@@ -49,7 +56,7 @@ const TableRow = ({ req_qty, product_info, product_id }) => {
       <td className="text-center border px-8 py-2">
         <div
           className="cursor-pointer"
-          onClick={() => alert("Remove From Cart")}
+          onClick={() => dispatch(removeFromCart(product_id))}
         >
           <IconPlain classes="fa fa-xmark" />
         </div>
