@@ -89,6 +89,7 @@ export const cartSlice = createSlice({
         return item.product_id !== payload;
       });
       state.cartItems = filteredItems;
+      SuccessMessage("Product Removed!");
     },
     clearCart: (state) => {
       // Set Cart Back To Its Initial State

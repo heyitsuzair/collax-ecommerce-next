@@ -45,7 +45,7 @@ const TableRow = ({ req_qty, product_info, product_id }) => {
           >
             <IconPlain classes="fa fa-minus" />
           </div>
-          <div className="w-[7vw] text-center">
+          <div className="w-[5vw] text-center">
             <span>{req_qty}</span>
           </div>
           <div
