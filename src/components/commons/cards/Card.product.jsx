@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../redux/slices/cart";
+import { addToCart, buyNow, clearCart } from "../../../redux/slices/cart";
 import { IconHoverable, TextMd, TextXl } from "../../commons";
 
 const CardProduct = ({
@@ -62,7 +62,8 @@ const CardProduct = ({
     const data = {
       product_id: id,
       req_qty: 1,
-      price: price,
+      price,
+      available_qty,
       size: sizes[0],
       color: colors[0],
     };
@@ -70,6 +71,30 @@ const CardProduct = ({
      * Trigger "addToCart" function of cart slice
      */
     dispatch(addToCart(data));
+  };
+
+  /**
+   * @function onBuyNow Triggers When Someone Click On "Buy Now"
+   */
+  const onBuyNow = () => {
+    const data = {
+      product_id: id,
+      req_qty: 1,
+      price,
+      available_qty,
+      size: sizes[0],
+      color: colors[0],
+    };
+    /**
+     * Trigger "clearCart" function of cart slice
+     */
+    dispatch(clearCart());
+    /**
+     * Trigger "buyNow" function of cart slice
+     */
+    dispatch(buyNow(data));
+
+    router.push("/checkout");
   };
 
   /**
@@ -122,6 +147,7 @@ const CardProduct = ({
         <button
           disabled={available_qty < 1}
           type="button"
+          onClick={() => onBuyNow()}
           className={` ${
             isCardHover
               ? "mt-0 opacity-100 disabled:opacity-60"

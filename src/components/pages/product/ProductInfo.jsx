@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../redux/slices/cart";
+import { addToCart, buyNow, clearCart } from "../../../redux/slices/cart";
 import {
   BadgeGroup,
   PlainButton,
@@ -48,7 +48,8 @@ const ProductInfo = ({
     const data = {
       product_id: id,
       req_qty: 1,
-      price: price,
+      price,
+      available_qty,
       size: sizes[selectedSize],
       color: colors[selectedColor],
     };
@@ -56,6 +57,30 @@ const ProductInfo = ({
      * Trigger "addToCart" function of cart slice
      */
     dispatch(addToCart(data));
+  };
+
+  /**
+   * @function onBuyNow Triggers When Someone Click On "Buy Now"
+   */
+  const onBuyNow = () => {
+    const data = {
+      product_id: id,
+      req_qty: 1,
+      price,
+      available_qty,
+      size: sizes[selectedSize],
+      color: colors[selectedColor],
+    };
+    /**
+     * Trigger "clearCart" function of cart slice
+     */
+    dispatch(clearCart());
+    /**
+     * Trigger "buyNow" function of cart slice
+     */
+    dispatch(buyNow(data));
+
+    router.push("/checkout");
   };
 
   /**
@@ -135,7 +160,7 @@ const ProductInfo = ({
           buttonColor="bg-yellow-300 hover:bg-indigo-500 disabled:hover:bg-yellow-300"
         />
         <PlainButton
-          onClick={() => alert("buy now")}
+          onClick={() => onBuyNow()}
           text="Buy Now"
           isDisabled={available_qty < 1}
           textColor="text-black"
