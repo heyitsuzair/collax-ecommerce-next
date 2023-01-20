@@ -96,8 +96,6 @@ export const cartSlice = createSlice({
 
       state.cartItems = [];
       state.total = 0;
-
-      SuccessMessage("Cart Cleared!");
     },
     increaseQuantity: (state, { payload }) => {
       /**

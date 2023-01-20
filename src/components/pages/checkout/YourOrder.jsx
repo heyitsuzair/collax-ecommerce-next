@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   PlainButton,
   SpinnerMedium,
@@ -28,6 +29,11 @@ const YourOrder = ({
     errors,
   };
 
+  /**
+   * Redux Helper Functions
+   */
+  const cart = useSelector((store) => store.cart);
+
   return (
     <div>
       <div>
@@ -41,17 +47,33 @@ const YourOrder = ({
           <TextSm text="Product" classes="!text-gray-500" />
           <TextSm text="Total" classes="!text-gray-500" />
         </div>
-        <div className="flex border-b pb-3 justify-between my-6">
-          <TextSm text="iPhone 12" classes="!text-gray-500" />
-          <TextSm text="$120" classes="!text-gray-700" />
-        </div>
+        {cart.cartItems.map((item) => {
+          return (
+            <div
+              key={item.product_id}
+              className="flex border-b pb-3 justify-between my-6"
+            >
+              <TextSm
+                text={item.product_info.product_title}
+                classes="!text-gray-500"
+              />
+              <TextSm
+                text={`$${item.req_qty * item.product_info.price}`}
+                classes="!text-gray-700"
+              />
+            </div>
+          );
+        })}
         <div className="flex border-b pb-3 justify-between my-6">
           <TextSm text="Delivery Charges" classes="!text-gray-500" />
           <TextSm text="$40" classes="!text-gray-700" />
         </div>
         <div className="flex border-b pb-3 justify-between my-6">
           <TextSm text="Order Total" classes="!text-gray-500" />
-          <TextLg text="$400" classes="!text-black font-bold" />
+          <TextLg
+            text={`$${cart.total + 40}`}
+            classes="!text-black font-bold"
+          />
         </div>
       </div>
       <div className="col-span-12">
