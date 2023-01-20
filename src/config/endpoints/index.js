@@ -6,4 +6,7 @@ export const Endpoints = {
 
   // Orders
   placeOrder: BASE_URL + "api/place-order",
+
+  // Contact
+  sendMessage: BASE_URL + "api/submissions",
 };

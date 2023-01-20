@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 import { ContactFormSchema } from "../../../yupSchemas";
 import {
+  ErrorMessage,
   InputPlain,
   PlainButton,
   SpinnerMedium,
@@ -10,6 +11,7 @@ import {
   TextAreaPlain,
 } from "../../commons";
 import { toast } from "react-toastify";
+import { sendMessage } from "../../../functions/contact";
 
 const ContactForm = () => {
   /**
@@ -37,11 +39,17 @@ const ContactForm = () => {
      */
     setIsLoading(true);
 
-    setTimeout(() => {
-      SuccessMessage("We Will Contact You Soon!");
+    const data = { data: values };
+
+    const isMessageSent = await sendMessage(data);
+    if (isMessageSent.error) {
+      ErrorMessage(isMessageSent.error.message);
       setIsLoading(false);
-      actions.resetForm();
-    }, 1500);
+      return;
+    }
+    SuccessMessage("We Will Contact You Soon!");
+    setIsLoading(false);
+    actions.resetForm();
   };
 
   /**
