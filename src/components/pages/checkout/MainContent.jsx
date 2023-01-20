@@ -3,13 +3,25 @@ import BillingDetails from "./BillingDetails";
 import YourOrder from "./YourOrder";
 import { useFormik } from "formik";
 import { CheckoutFormSchema } from "../../../yupSchemas";
-import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { placeOrder } from "../../../functions/orders";
+import { ErrorMessage, SuccessMessage } from "../../commons";
+import { useRouter } from "next/router";
+import { clearCart } from "../../../redux/slices/cart";
 
 const MainContent = () => {
+  const router = useRouter();
+
   /**
    * State For Loading On Form Submission
    */
   const [isLoading, setIsLoading] = useState(false);
+
+  /**
+   * Redux Helper Functions
+   */
+  const cart = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
 
   /**
    * @var initialValues Form Initial Values
@@ -43,12 +55,29 @@ const MainContent = () => {
      * Start Loading
      */
     setIsLoading(true);
+    const data = {
+      ...values,
+      total: cart.total + 40,
+      order_items: cart.cartItems,
+    };
 
-    setTimeout(() => {
-      toast.success("Order Placed!");
-      setIsLoading(false);
-      actions.resetForm();
-    }, 1500);
+    const isOrderAdded = await placeOrder(data);
+
+    if (isOrderAdded.error) {
+      ErrorMessage(isOrderAdded.msg);
+    } else {
+      /**
+       * Clear Cart
+       */
+      dispatch(clearCart());
+      SuccessMessage(isOrderAdded.msg);
+      router.push("/");
+    }
+
+    /**
+     * Stop Loading
+     */
+    setIsLoading(false);
   };
 
   /**
